@@ -102,7 +102,7 @@ position: absolute;
 color: #d1d1d1;
 }
 
-/*Musik-Button, fünfter*/
+/*Musik-Button, fï¿½nfter*/
 #musik {
 color: #f7f7f7;
 font-family: Verdana, Arial, sans-serif;
@@ -163,13 +163,18 @@ border-radius:6px;
 behavior:url(style/border-radius.htc);
 }
 
-/*Anmeldeformular für die Mediathek*/
+/* Anmeldeformular fÃ¼r die Mediathek wird im der index.php verwendet*/
+/*Ã„nderungen am 9.2.2012 um 23.32 von Leon Bergmann*/
 #login_form {
 margin-top: 150px;
 margin-left: auto;
 margin-right: auto;
-width: 500px;
+width: 200px;
+/* Blauer Hintergrund + kein AufzÃ¤hlungszeichen*/
+background: #00FF00;
+list-style: none;
 }
+
 
 #googlemaps {
 margin-left: auto;

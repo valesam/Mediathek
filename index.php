@@ -1,11 +1,15 @@
+
 <?php
-session_start();
-if(isset($_SESSION["sitepass"]))
-   {
-	include("main.php");
-	exit;
-   }
+/**
+* Autor: Leon Bergmann
+* Datum: 9.2.2012 22:21
+* Zweck : Seite die als aller erstes Aufgerufen wird wenn die Mediathek geöffnet wird. Hier Kann sich der User einlogen.
+*/
+include "menu.html";
+
 ?>
+
+<!--
 <html>
 <head><title>Die Mediathek der Schule Marienau</title>
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
@@ -23,44 +27,31 @@ if(isset($_SESSION["sitepass"]))
   <div id="pfeil" style="margin-left: 8px;"></div>
  </div>
 </div>
+-->
 
-<div id="content">
-<form action="login.php" method="post" id="login_form">
-<table border="0" cellpadding="3" cellspacing="0">
-    <tr>
-      <td>Mit dem richtigen Zugangs-Code k&ouml;nnen Sie sich einloggen:</td>
-    </tr>
-	
-	<tr>
-		<td><br /></td>
-	</tr>
-    
-	<tr>
-		<td> Username:<input type="text" size="24" maxlength="50" name="username"></td>
-    </tr>  
-	
-	<tr>
-		<td><br /></td>
-	</tr>
-	
-	<tr>
-		<td>Passwort:<input type="password" size="24" maxlength="50" name="password"></td>
-	</tr>
-	<tr>
-		<td><br /></td>
-	</tr>
-	<tr>
-		<td><input type="submit" value="Login"></td>
-	 </tr>
-	
-	
-
-</form>
-</div>
-
-<div class="preload_images">
- <img class="preload" src="homehover.png" alt="preload image"></img>
-</div>
-
-</body>
+		<div id="content">
+			<form action="login.php" method="post" id="login_form">
+				<ul>
+					<li>
+						Username:
+						<ul>
+							<li><input type="text" name="username" /></li>
+						</ul>
+					</li>
+					<li>
+						Passwort:
+						<ul>
+							<li><input type="password" name="password" /></li>
+						</ul>
+					</li>
+					<li>
+						<input type="submit" Value="login" />
+					</li>
+					<li>
+						<!-- Noch nicht möglich da Modul noch nicht vorhanden <a href="registrieren.html" target="_self" >Hier registrieren</a> -->
+					</li>
+				</ul>
+			</form>
+		</div>
+	</body>
 </html>
