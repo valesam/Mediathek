@@ -29,7 +29,7 @@ include "menu.html";
 </div>
 -->
 
-		<div id="content">
+		
 			<form action="login.php" method="post" id="login_form">
 				<ul>
 					<li>
@@ -52,6 +52,6 @@ include "menu.html";
 					</li>
 				</ul>
 			</form>
-		</div>
+		
 	</body>
 </html>

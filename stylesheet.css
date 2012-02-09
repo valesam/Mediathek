@@ -175,6 +175,17 @@ background: #00FF00;
 list-style: none;
 }
 
+/* Anzeigeart der Fehlermeldung */
+/* Änderungen am 10.2.2012 00:12 von Leon Bergmann */
+#warnings{
+margin-top: 150px;
+margin-left: auto;
+margin-right: auto;
+color: #FF0000;
+font-size: 24px;
+font-weight: bold;
+text-align: center;
+}
 
 #googlemaps {
 margin-left: auto;
