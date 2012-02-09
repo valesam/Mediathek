@@ -23,30 +23,50 @@ include("secoured.php");
 <div id="content">
 <div id="player">
 <?php
-$film = $_POST["film"];
+$film_ID = $_GET["ID"];
+// Altes Übergabekonzept: Alle Infos werden per POST übergeben
+// Neues Übergabekonzept: Nur ID wird per GET von Auswahlseite übergeben. Auf abspielseite werden benötigte Infos aus DB gelade 
+
+
+//Hier DB abfrage der nötigen infos durch die ID
+//##########################################################################
+$film_pfad = "";
+$film_preview = "";
+$film_titel = "";
+$film_beschreibung = "";
+//#########################################################################
+
+//$film = $_POST["film"];
 
 //$film = "/mediathek/uploads/video.mp4";
+
 $film_preview = "/mediathek/player/preview.jpg";
 
 include("funktionen/suche.html");
 if (!empty($film))
 {
 echo "
-<div id='mediaplayer'>Player nicht verf�gbar!</div>
+<h2>$film_titel</h2>
+
+<div id='mediaplayer'>Player nicht verf&uuml;gbar!</div>
 	
 	<script type='text/javascript' src='/mediathek/player/jwplayer.js'></script>
 	<script type='text/javascript'>
 		jwplayer('mediaplayer').setup({
 			flashplayer: '/mediathek/player/player.swf',
-			file: '$film',
+			file: '$film_pfad',
 			image: '$film_preview'
 		});
 	</script>
+	
+	<br><br>
+	Filmbeschreibung:<br>
+	$film_beschreibung
 	";
 }
 else
 {
-echo "Es wurde kein Film ausgew�hlt!";
+echo "Es wurde kein Film ausgew&auml;hlt!";
 }
 
 ?>
