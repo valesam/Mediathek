@@ -11,47 +11,47 @@
 * Sollte das Passwort identisch sein wird eine Variable in der Session gesetzt die bei jedem Aufruf eine geschützen Seite Überprüft wird
 */ 
 
-include "funktionen/connect.php"; // einbinden der Datenbankverbindung
+include "funktionen/connect.php"; /* einbinden der Datenbankverbindung */
 
-$UserPasswort = $_POST['password']; // Übergabe das Passworts aus dem Formular
-$Username = $_POST['username']; // Übergabe des Usernamen
+$UserPasswort = $_POST['password']; /* Übergabe das Passworts aus dem Formular */
+$Username = $_POST['username']; /* Übergabe des Usernamen */
 
-$sql = "SELECT * FROM med_user where Username = '$Username'"; // SQL Query Definition die einen Datensatz aus der Datenbank abruft welcher den Username das User trägt
+$sql = "SELECT * FROM med_user where Username = '$Username'"; /* SQL Query Definition die einen Datensatz aus der Datenbank abruft welcher den Username das User trägt */
 
-$resultOfQuery = mysql_query($sql); // Ausführen der oben beschriebenen Query
+$resultOfQuery = mysql_query($sql); /* Ausführen der oben beschriebenen Query */
 
-if(mysql_num_rows($resultOfQuery) == 0) //Überprüfung ob die abfrage ein Ergebniss hatte | Die funktion mysql_num_rows überprüft die Anzahl der Ergebnisse (http://php.net/manual/de/function.mysql-num-rows.php)
+if(mysql_num_rows($resultOfQuery) == 0) /* Überprüfung ob die abfrage ein Ergebniss hatte | Die funktion mysql_num_rows überprüft die Anzahl der Ergebnisse (http://php.net/manual/de/function.mysql-num-rows.php) */
 {
-	// wenn das Ergebnis 0 ist, also der User nicht in der Datenbank ist wird folgender Quellcode ausgeführt:
-	$Fehler = "noUser"; // Variable zu Behandlung der Ausgabe auf der Fehlerseite
-	include "error.php"; // einbinden der Fehlerseite
+	/* wenn das Ergebnis 0 ist, also der User nicht in der Datenbank ist wird folgender Quellcode ausgeführt: */
+	$Fehler = "noUser"; /* Variable zu Behandlung der Ausgabe auf der Fehlerseite */
+	include "error.php"; /* einbinden der Fehlerseite */
 }
-else // Wenn der User in der Datenbank ist wird folgender Quellcode ausgeführt
+else /* Wenn der User in der Datenbank ist wird folgender Quellcode ausgeführt */
 {
- $resultOfQueryFetched = mysql_fetch_object($resultOfQuery); // Das Ergebnis der SQL Abfrage wird in ein Object geschrieben | mysql_fetch_object(http://de.php.net/manual/de/function.mysql-fetch-object.php) | Object (http://php.net/manual/en/language.types.object.php)
+ $resultOfQueryFetched = mysql_fetch_object($resultOfQuery); /* Das Ergebnis der SQL Abfrage wird in ein Object geschrieben | mysql_fetch_object(http://de.php.net/manual/de/function.mysql-fetch-object.php) | Object (http://php.net/manual/en/language.types.object.php) */
 
- $DatabaseUserPasswort = $resultOfQueryFetched->Passwort; // Speichert das Passwort aus der Datenbank in einer Variable
+ $DatabaseUserPasswort = $resultOfQueryFetched->Passwort; /* Speichert das Passwort aus der Datenbank in einer Variable */
  
  
- $DatabaseUserPasswortHashed	= hash('sha512',$DatabaseUserPasswort); // bildet einen Hash aus dem Passwort aus der Datenbank
- $UserPasswortHashed			= hash('sha512',$UserPasswort); // bildet einen Hash aus der Passworteingabe des Users
+ $DatabaseUserPasswortHashed	= hash('sha512',$DatabaseUserPasswort); /* bildet einen Hash aus dem Passwort aus der Datenbank */
+ $UserPasswortHashed			= hash('sha512',$UserPasswort); /* bildet einen Hash aus der Passworteingabe des Users */
  
- if($DatabaseUserPasswortHashed != $UserPasswortHashed) // Prüfung ob sich beide Hashes gleichen
+ if($DatabaseUserPasswortHashed != $UserPasswortHashed) /* Prüfung ob sich beide Hashes gleichen */
  {
-	// Wenn nein wird der User auf die Fehlerseite umgleitet und aufgefordert sein Passwort neu einzugeben 
-	$Fehler = "passwortIncorrect"; // Variable zu Behandlung der Ausgabe auf der Fehlerseite
-	include "error.php"; // einbinden der Fehlerseite
+	/* Wenn nein wird der User auf die Fehlerseite umgleitet und aufgefordert sein Passwort neu einzugeben */
+	$Fehler = "passwortIncorrect"; /* Variable zu Behandlung der Ausgabe auf der Fehlerseite */
+	include "error.php"; /* einbinden der Fehlerseite */
  }
  
  else
  {
-	//wenn beide Passwörter übereinstimmen wird eine Session eröffnet(http://de2.php.net/manual/de/intro.session.php)
-	session_start(); // öffnen der Session
-	$_SESSION["sitepass"]=$UserPasswortHashed; // Schreiben des Passwortes in die Session
-	include "browser_info.php"; // einbinden der browser_info.php um Informationen über den Browser zusammeln
-	$_SESSION['UserOs'] = $osName.$osVersion; // Speichern des Betriebssystems in der Session um bei späteren Aktionen diese Daten zu verwenden
-	$_SESSION['UserBrowser'] = $Browser; // Speichern des Browsers in der Session um bei späteren Aktionen diese Daten zu verwenden
-	include("main.php"); // einbinden der main.php | auf dieser Seite befinden sich alle weiteren Funktionen der Mediathek
+	/* wenn beide Passwörter übereinstimmen wird eine Session eröffnet(http://de2.php.net/manual/de/intro.session.php) */
+	session_start(); /* öffnen der Session */
+	$_SESSION["sitepass"]=$UserPasswortHashed; /* Schreiben des Passwortes in die Session */
+	include "browser_info.php"; /* einbinden der browser_info.php um Informationen über den Browser zusammeln */
+	$_SESSION['UserOs'] = $osName.$osVersion; /* Speichern des Betriebssystems in der Session um bei späteren Aktionen diese Daten zu verwenden */
+	$_SESSION['UserBrowser'] = $Browser; /* Speichern des Browsers in der Session um bei späteren Aktionen diese Daten zu verwenden */
+	include("main.php"); /* einbinden der main.php | auf dieser Seite befinden sich alle weiteren Funktionen der Mediathek */
 
  }
 }
