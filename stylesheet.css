@@ -166,13 +166,25 @@ behavior:url(style/border-radius.htc);
 /* Anmeldeformular für die Mediathek wird im der index.php verwendet*/
 /*Änderungen am 9.2.2012 um 23.32 von Leon Bergmann*/
 #login_form {
+
+/* Abstand und Ausrichtung des Elements */
 margin-top: 150px;
 margin-left: auto;
 margin-right: auto;
-width: 200px;
+width: 300px;
+
 /* Blauer Hintergrund + kein Aufzählungszeichen*/
-background: #00FF00;
+background: #240354;
 list-style: none;
+
+/* Schatten für den Login */
+border: 1px solid #bbbbbb;
+background-color: #f7f7f7;
+-moz-border-radius:6px;
+-webkit-border-radius:6px;
+-khtml-border-radius:6px;
+border-radius:6px;
+behavior:url(style/border-radius.htc);
 }
 
 /* Anzeigeart der Fehlermeldung */
