@@ -51,6 +51,7 @@ echo "<table border='2px'>"
 
 
 
+
 // Verarbeiten der Querry || Die Ergebenisse werden in ein Object mit verschiedenen Beiteichnungen geschrieben | Aufzurufen über $row->"Spaltennamen der DB"
 //Letzte Spalte der Tabelle: Übergabe des Pfades der Datei. Mögliche andere Übergabemethode wünschenswert
 
@@ -64,6 +65,15 @@ echo "<tr>
 </tr>";
 
 
+
+
+	
+while($row = mysql_fetch_object($result))// Verarbeiten der Querry || Die Ergebenisse werden in ein Object mit verschiedenen Beiteichnungen geschrieben | Aufzurufen über $row->"Spaltennamen der DB"
+{
+	echo "<tr><td><input type='radio' name='Wahl' value=''></td>
+	<td>".$row->FSK."</td><td>".$row->Filmtitel."</td><td>Noch Leer</td>
+	<td><a herf='?ID=".$row->ID."'</td>
+	</tr>";
 
 }
 
