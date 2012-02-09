@@ -173,13 +173,13 @@ margin-left: auto;
 margin-right: auto;
 width: 300px;
 
-/* Blauer Hintergrund + kein Aufzählungszeichen*/
-background: #240354;
-list-style: none;
 
-/* Schatten für den Login */
+/* Keine Aufzählungszeichen */
+list-style-type: none;
+
+/* Schatten für den Login + Hintergrundfarbe */
 border: 1px solid #bbbbbb;
-background-color: #f7f7f7;
+background-color: #AAABB0;
 -moz-border-radius:6px;
 -webkit-border-radius:6px;
 -khtml-border-radius:6px;
