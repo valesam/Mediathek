@@ -173,9 +173,10 @@ margin-left: auto;
 margin-right: auto;
 width: 300px;
 
-
-/* Keine Aufzählungszeichen */
-list-style-type: none;
+/* Schrift Definition*/
+color: #FFFFFF;
+font-weight: bold;
+font-size: 16px;
 
 /* Schatten für den Login + Hintergrundfarbe */
 border: 1px solid #bbbbbb;
@@ -185,6 +186,12 @@ background-color: #AAABB0;
 -khtml-border-radius:6px;
 border-radius:6px;
 behavior:url(style/border-radius.htc);
+}
+
+/* Unterklasse login_form li*/
+/* Änderungen am 10.2.2012 00:31 von Leon Bergmann */
+#login_form li{
+list-style-type: none;
 }
 
 /* Anzeigeart der Fehlermeldung */
