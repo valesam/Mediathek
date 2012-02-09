@@ -1,4 +1,10 @@
 <?php
+//Autor: Florian Giller
+//Funktion: durchsuchen der Datenbank nach Eintrag und anschließende Ausgabe der Ergebnisse in einer Tabelle
+
+
+
+
 //Serverconnection Daten
 include("connect.php");
 
@@ -25,26 +31,40 @@ $result = mysql_query($sql);// Abschicken des SQl Statements
 
 //Ausgabe der Ergebenisse der Querry (Einfaches Layoute: Bessere wird von Valerio noch gelifert)
 
-// Table erzeigt eine Tabbelle 
+
 // noch Überschriften (Wird noch um geschrieben)
-//neue Spalte
+
 //neue Zeile
 //neue Zeile
 //abschluss der Spalte
 // Daten
+
+// Table erzeigt eine Tabbelle 
 echo "<table border='2px'>"
 	
-	."<tr>"
-	."<td>FSK</td>"
-	."<td>Filmtitel</td>"
-	."<td>Bewertung</td>"
-	."<td></td>"
+	."<tr>"				//neue Headzeile
+	."<th>FSK</th>"			//Überschriften der Spalten
+	."<th>Filmtitel</th>"
+	."<th>Bewertung</th>"
+	."<th></th>"
 	."</tr>";
-	
-while($row = mysql_fetch_object($result))// Verarbeiten der Querry || Die Ergebenisse werden in ein Object mit verschiedenen Beiteichnungen geschrieben | Aufzurufen über $row->"Spaltennamen der DB"
-{
 
-echo "<tr><td><input type='radio' name='Wahl' value=''></td><td>".$row->FSK."</td><td>".$row->Filmtitel."</td><td>Noch Leer</td><td><button name='clickbutton'  type='submit' value='pfad=".$row->film_pfad."' ></button></td></tr>";
+
+
+// Verarbeiten der Querry || Die Ergebenisse werden in ein Object mit verschiedenen Beiteichnungen geschrieben | Aufzurufen über $row->"Spaltennamen der DB"
+//Letzte Spalte der Tabelle: Übergabe des Pfades der Datei. Mögliche andere Übergabemethode wünschenswert
+
+while($row = mysql_fetch_object($result)){
+
+echo "<tr>
+<td><input type='radio' name='Wahl' value=''></td>
+<td>".$row->FSK."</td><td>".$row->Filmtitel."</td>
+<td>Noch Leer</td>
+<td><button name='clickbutton'  type='submit' value='pfad=".$row->film_pfad."' ></button></td>
+</tr>";
+
+
+
 }
 
 echo "</table>";
