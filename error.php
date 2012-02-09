@@ -1,29 +1,30 @@
-<html>
-<head><title>Die Mediathek der Schule Marienau</title>
-<meta http-equiv="refresh" content="2; URL=index.php">
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
-</head>
-<body>
+<?php
+/***
+* Autor: Leon Bergmann
+* Datum: 9.2.2012 22:33
+* Zweck: Behandlung von Fehlern auf der gesamten Webseite
+*/
 
-<div id="navbar">
- <div class="grpelem">
-  <a href="index.php" id="home"></a>
-  <a href="filme.php" id="filme">FILME</a>
-  <a href="bilder.php" id="bilder">BILDER</a>
-  <a href="dokumente.php" id="dokumente">DOKUMENTE</a>
-  <a href="musik.php" id="musik">MUSIK</a>
-  <a href="landkarten.php" id="landkarten">LANDKARTEN</a>
+/**Überprüft die Variable Fehler auf die von uns definierten Inhalte und reagiert passend  */
+if($Fehler = "noUser" )
+{
+ 	/** Ausgabe der Fehlermeldung */
+ 	echo "<p id='warning'>Sie sind kein registriertes Mitglied!</p>";
+ 	/** 
+ 	* Behandlung der Fehlermeldung durch das Einbinden des Registrierungsmoduls. Momentan noch nicht eingebunden, weil die 
+ 	* datei noch nicht fertig gestellt ist
+ 	* include "registrieren.html";
+ 	*/
+}
+elseif($Fehler = "passwortIncorrect")
+{
+	/** Ausgabe der Fehlermedlung */
+	echo "<p id='warning'>Falsches Passwort oder falscher Username!</p>"
+	/** 
+ 	* Behandlung der Fehlermeldung durch das Einbinden des Loginmoduls. Momentan noch nicht eingebunden, weil die 
+ 	* Datei noch nicht fertig gestellt ist
+ 	* include "login.html";
+ 	*/
+}
 
- </div>
-</div>
-
-<div id="content">
-<h1>Zugriff verweigert!</h1>
-</div>
-
-<div class="preload_images">
- <img class="preload" src="homehover.png" alt="preload image"></img>
-</div>
-
-</body>
-</html>
+?>
