@@ -1,0 +1,206 @@
+html {
+background-color: #e1eee6;
+}
+
+a:link {
+color:#1EADEB;
+text-decoration: none
+}
+
+a:visited {
+color:#1EADEB;
+text-decoration: none
+}
+
+a:hover {
+color:#32C4FF;
+text-decoration: none
+}
+
+a:active {
+color:#3d7ca8;
+text-decoration: none
+}
+
+/*Navigationsleiste oben*/
+#navbar {
+height: 27px;
+background-color: #151515;
+margin-top: 0px;
+width: 1000px;
+margin-right: auto;
+margin-left: auto;
+-moz-border-radius:6px;
+-webkit-border-radius:6px;
+-khtml-border-radius:6px;
+border-radius:6px;
+behavior:url(style/border-radius.htc);
+}
+
+/*Home-Button, erster*/
+#home {
+background-image: url("style/home.png");
+background-repeat: no-repeat;
+background-position: center top;
+margin-left: 8px;
+margin-top: 7px;
+position: absolute;
+height: 22px;
+width: 20px;
+}
+
+/*Home-Button mit Mouseover*/
+#home:hover {
+background-image: url("style/homehover.png");
+}
+
+/*Filme-Button, zweiter*/
+#filme {
+color: #f7f7f7;
+font-family: Verdana, Arial, sans-serif;
+font-size: 0.9em;
+text-decoration: none;
+line-height: 28px;
+margin-left: 151px;
+position: absolute;
+}
+
+/*Filme-Button mit Mouseover*/
+#filme:hover {
+color: #d1d1d1;
+}
+
+/*Bilder-Button, dritter*/
+#bilder {
+color: #f7f7f7;
+font-family: Verdana, Arial, sans-serif;
+font-size: 0.9em;
+text-decoration: none;
+line-height: 28px;
+margin-left: 320px;
+position: absolute;
+}
+
+/*Bilder-Button mit Mouseover*/
+#bilder:hover {
+color: #d1d1d1;
+}
+
+/*Dokumente-Button, vierter*/
+#dokumente {
+color: #f7f7f7;
+font-family: Verdana, Arial, sans-serif;
+font-size: 0.9em;
+text-decoration: none;
+line-height: 28px;
+margin-left: 500px;
+position: absolute;
+}
+
+/*Dokumente-Button mit Mouseover*/
+#dokumente:hover {
+color: #d1d1d1;
+}
+
+/*Musik-Button, fünfter*/
+#musik {
+color: #f7f7f7;
+font-family: Verdana, Arial, sans-serif;
+font-size: 0.9em;
+text-decoration: none;
+line-height: 28px;
+margin-left: 717px;
+position: absolute;
+}
+
+/*Musik-Button mit Mouseover*/
+#musik:hover {
+color: #d1d1d1;
+}
+
+/*Landkarten-Button, sechster*/
+#landkarten {
+color: #f7f7f7;
+font-family: Verdana, Arial, sans-serif;
+font-size: 0.9em;
+text-decoration: none;
+line-height: 28px;
+margin-left: 891px;
+position: absolute;
+}
+
+/*Landkarten-Button mit Mouseover*/
+#landkarten:hover {
+color: #d1d1d1;
+}
+
+/*Pfeil, der den jeweils aktiven Button markiert*/
+#pfeil {
+background-image: url("style/arrow.png");
+background-repeat: no-repeat;
+background-position: center top;
+margin-top: 25px;
+width: 19px;
+height: 9px;
+}
+
+/*Gesamter Inhalt*/
+#content {
+font-family: Verdana, Arial, sans-serif;
+
+width: 1000px;
+height: 800px;
+
+margin-top: 12px;
+margin-right: auto;
+margin-left: auto;
+border: 1px solid #bbbbbb;
+background-color: #f7f7f7;
+-moz-border-radius:6px;
+-webkit-border-radius:6px;
+-khtml-border-radius:6px;
+border-radius:6px;
+behavior:url(style/border-radius.htc);
+}
+
+/*Anmeldeformular für die Mediathek*/
+#login_form {
+margin-top: 150px;
+margin-left: auto;
+margin-right: auto;
+width: 500px;
+}
+
+#googlemaps {
+margin-left: auto;
+margin-right: auto;
+}
+
+h1 {
+text-align: center;
+}
+
+#mediaplayer {
+margin-left: 40px;
+}
+
+/* blabla */
+
+.grpelem {
+	display: inline;
+	float: left;
+}
+
+.preload_images {
+	position: absolute;
+	overflow: hidden;
+	left: -9999px;
+	top: -9999px;
+	height: 1px;
+	width: 1px;
+}
+
+preload {
+	height: 1px;
+	width: 1px;
+}

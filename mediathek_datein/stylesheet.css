@@ -1,0 +1,197 @@
+html {
+background-color: #e1eee6;
+}
+
+a:link {
+color:#1EADEB;
+text-decoration: none
+}
+
+a:visited {
+color:#1EADEB;
+text-decoration: none
+}
+
+a:hover {
+color:#32C4FF;
+text-decoration: none
+}
+
+a:active {
+color:#3d7ca8;
+text-decoration: none
+}
+
+#navbar {
+height: 27px;
+background-color: #151515;
+margin-top: 0px;
+width: 1000px;
+position: absolute;
+left: 50%;
+margin-left: -500px;
+-moz-border-radius:6px;
+-webkit-border-radius:6px;
+-khtml-border-radius:6px;
+border-radius:6px;
+behavior:url(border-radius.htc);
+}
+
+#home {
+background-image: url("home.png");
+background-repeat: no-repeat;
+background-position: center top;
+margin-left: 8px;
+margin-top: 7px;
+position: absolute;
+height: 22px;
+width: 20px;
+}
+
+#home:hover {
+background-image: url("homehover.png");
+}
+
+#filme {
+color: #f7f7f7;
+font-family: Verdana, Arial, sans-serif;
+font-size: 0.9em;
+text-decoration: none;
+line-height: 28px;
+margin-left: 151px;
+position: absolute;
+}
+
+#filme:hover {
+color: #d1d1d1;
+}
+
+#bilder {
+color: #f7f7f7;
+font-family: Verdana, Arial, sans-serif;
+font-size: 0.9em;
+text-decoration: none;
+line-height: 28px;
+margin-left: 320px;
+position: absolute;
+}
+
+#bilder:hover {
+color: #d1d1d1;
+}
+
+#dokumente {
+color: #f7f7f7;
+font-family: Verdana, Arial, sans-serif;
+font-size: 0.9em;
+text-decoration: none;
+line-height: 28px;
+margin-left: 500px;
+position: absolute;
+}
+
+#dokumente:hover {
+color: #d1d1d1;
+}
+
+#musik {
+color: #f7f7f7;
+font-family: Verdana, Arial, sans-serif;
+font-size: 0.9em;
+text-decoration: none;
+line-height: 28px;
+margin-left: 717px;
+position: absolute;
+}
+
+#musik:hover {
+color: #d1d1d1;
+}
+
+#landkarten {
+color: #f7f7f7;
+font-family: Verdana, Arial, sans-serif;
+font-size: 0.9em;
+text-decoration: none;
+line-height: 28px;
+margin-left: 891px;
+position: absolute;
+}
+
+#landkarten:hover {
+color: #d1d1d1;
+}
+
+#pfeil {
+background-image: url("arrow.png");
+background-repeat: no-repeat;
+background-position: center top;
+margin-top: 25px;
+width: 19px;
+height: 9px;
+}
+
+#content {
+width: 1000px;
+height: 800px;
+margin-top: 39px;
+position: absolute;
+left: 50%;
+margin-left: -500px;
+border: 1px solid #bbbbbb;
+background-color: #f7f7f7;
+-moz-border-radius:6px;
+-webkit-border-radius:6px;
+-khtml-border-radius:6px;
+border-radius:6px;
+behavior:url(border-radius.htc);
+}
+
+form {
+background-image:url(background.gif); padding:20px; border:6px solid #ddd;
+}
+
+td, input, select, textarea {
+font-size:13px; font-family:Verdana,sans-serif; font-weight:bold;
+}
+
+input, select, textarea {
+color:#00c;
+}
+
+.Bereich, .Feld {
+background-color:#ffa; width:300px; border:6px solid #ddd;
+}
+
+.Auswahl {
+background-color:#dff; width:300px; border:6px solid #ddd;
+}
+
+.Check, .Radio {
+background-color:#ddff; border:1px solid #ddd;
+}
+
+.Button {
+background-color:#aaa; color:#fff; width:200px; border:6px solid #ddd;
+}
+
+/* blabla */
+
+.grpelem {
+	display: inline;
+	float: left;
+}
+
+.preload_images {
+	position: absolute;
+	overflow: hidden;
+	left: -9999px;
+	top: -9999px;
+	height: 1px;
+	width: 1px;
+}
+
+preload {
+	height: 1px;
+	width: 1px;
+}

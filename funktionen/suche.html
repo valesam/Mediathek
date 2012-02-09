@@ -1,0 +1,46 @@
+<form action="" method="post">
+<h1 style="margin-left: 120px;">
+	Suchen Sie einen Film aus</h1>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 561px; height: 146px;">
+	<tbody>
+		<tr>
+			<td style="text-align: right;">
+				<h4>
+					Filmtitel:<br />
+					<input maxlength="50" name="Name" size="24" type="Text" /></h4>
+				<h4>
+					<br />
+					Genre:<br />
+					<input maxlength="50" name="Genre" size="24" type="Text" /></h4>
+			</td>
+			<td>
+				<p style="margin-left: 80px;">
+					<input name="FSK" type="radio" value="6" />FSK ab 6</p>
+				<p style="margin-left: 80px;">
+					<input name="FSK" type="radio" value="12" />FSK ab 12</p>
+				<p style="margin-left: 80px;">
+					<input name="FSK" type="radio" value="16" />FSK ab 16</p>
+				<p style="margin-left: 80px;">
+					<input name="FSK" type="radio" value="18" />FSK ab 18</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h4 style="margin-left: 120px;">
+	Bewertung:</h4>
+<p style="margin-left: 120px;">
+	<input name="Bewertung" type="radio" value="5" />*****</p>
+<p style="margin-left: 120px;">
+	<input name="Bewertung" type="radio" value="4" />****</p>
+<p style="margin-left: 120px;">
+	<input name="Bewertung" type="radio" value="3" />***</p>
+<p style="margin-left: 120px;">
+	<input name="Bewertung" type="radio" value="2" />**</p>
+<p style="margin-left: 120px;">
+	<input name="Bewertung" type="radio" value="1" />*</p>
+<p style="margin-left: 120px;">
+	&nbsp;</p>
+<p style="margin-left: 120px;">
+	<input name="Submit" type="submit" value="Film zeigen" /></p>
+	<input type="hidden" name="film" value="/mediathek/uploads/video.mp4">
+</form>
