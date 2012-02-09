@@ -1,57 +1,57 @@
 <?php
-/** 
+/**
 * Autor : Leon Bergmann
 * Datum : 9.2.2012 21:52
-* Aufgabe der Datei: Überprüft ob der User berechtigt ist die Mediathek zu benutzen!
+* Aufgabe der Datei: ‚Ä†berpr≈∏ft ob der User berechtigt ist die Mediathek zu benutzen!
 *
-* Dafür wird mithilfe der Datenbank überprüft ob der User registriert ist. Danach wird das vom User eingegeben Passwort in einen SHA512 (http://de.wikipedia.org/wiki/Secure_Hash_Algorithm)
-* umgewandelt, danach wird das, fals der User vorhanden ist, Passwort aus der Datenbank ebenfalls in einen 
-* SHA512 Hash umgewandelt. Beide Hashes werden mit einander verglichen, sollte der eingegebene Hash dem aus der 
+* Daf≈∏r wird mithilfe der Datenbank ≈∏berpr≈∏ft ob der User registriert ist. Danach wird das vom User eingegeben Passwort in einen SHA512 (http://de.wikipedia.org/wiki/Secure_Hash_Algorithm)
+* umgewandelt, danach wird das, fals der User vorhanden ist, Passwort aus der Datenbank ebenfalls in einen
+* SHA512 Hash umgewandelt. Beide Hashes werden mit einander verglichen, sollte der eingegebene Hash dem aus der
 * Datenbank nicht gleichen, wird der User auf eine Fehlerseite glenkt und muss gegebenenfalls das Passwort wiederholen!
-* Sollte das Passwort identisch sein wird eine Variable in der Session gesetzt die bei jedem Aufruf eine geschützen Seite Überprüft wird
-*/ 
+* Sollte das Passwort identisch sein wird eine Variable in der Session gesetzt die bei jedem Aufruf eine gesch≈∏tzen Seite ‚Ä†berpr≈∏ft wird
+*/
 
-include "funktionen/connect.php"; // einbinden der Datenbankverbindung
+include "funktionen/connect.php"; /* einbinden der Datenbankverbindung */
 
-$UserPasswort = $_POST['password']; // Übergabe das Passworts aus dem Formular
-$Username = $_POST['username']; // Übergabe des Usernamen
+$UserPasswort = $_POST['password']; /* ‚Ä†bergabe das Passworts aus dem Formular */
+$Username = $_POST['username']; /* ‚Ä†bergabe des Usernamen */
 
-$sql = "SELECT * FROM med_user where Username = '$Username'"; // SQL Query Definition die einen Datensatz aus der Datenbank abruft welcher den Username das User trägt
+$sql = "SELECT * FROM med_user where Username = '$Username'"; /* SQL Query Definition die einen Datensatz aus der Datenbank abruft welcher den Username das User tr≈†gt */
 
-$resultOfQuery = mysql_query($sql); // Ausführen der oben beschriebenen Query
+$resultOfQuery = mysql_query($sql); /* Ausf≈∏hren der oben beschriebenen Query */
 
-if(mysql_num_rows($resultOfQuery) == 0) //Überprüfung ob die abfrage ein Ergebniss hatte | Die funktion mysql_num_rows überprüft die Anzahl der Ergebnisse (http://php.net/manual/de/function.mysql-num-rows.php)
+if(mysql_num_rows($resultOfQuery) == 0) /* ‚Ä†berpr≈∏fung ob die abfrage ein Ergebniss hatte | Die funktion mysql_num_rows ≈∏berpr≈∏ft die Anzahl der Ergebnisse (http://php.net/manual/de/function.mysql-num-rows.php) */
 {
-	// wenn das Ergebnis 0 ist, also der User nicht in der Datenbank ist wird folgender Quellcode ausgeführt:
-	$Fehler = "noUser"; // Variable zu Behandlung der Ausgabe auf der Fehlerseite
-	include "error.php"; // einbinden der Fehlerseite
+/* wenn das Ergebnis 0 ist, also der User nicht in der Datenbank ist wird folgender Quellcode ausgef≈∏hrt: */
+$Fehler = "noUser"; /* Variable zu Behandlung der Ausgabe auf der Fehlerseite */
+include "error.php"; /* einbinden der Fehlerseite */
 }
-else // Wenn der User in der Datenbank ist wird folgender Quellcode ausgeführt
+else /* Wenn der User in der Datenbank ist wird folgender Quellcode ausgef≈∏hrt */
 {
- $resultOfQueryFetched = mysql_fetch_object($resultOfQuery); // Das Ergebnis der SQL Abfrage wird in ein Object geschrieben | mysql_fetch_object(http://de.php.net/manual/de/function.mysql-fetch-object.php) | Object (http://php.net/manual/en/language.types.object.php)
+ $resultOfQueryFetched = mysql_fetch_object($resultOfQuery); /* Das Ergebnis der SQL Abfrage wird in ein Object geschrieben | mysql_fetch_object(http://de.php.net/manual/de/function.mysql-fetch-object.php) | Object (http://php.net/manual/en/language.types.object.php) */
 
- $DatabaseUserPasswort = $resultOfQueryFetched->Passwort; // Speichert das Passwort aus der Datenbank in einer Variable
+ $DatabaseUserPasswort = $resultOfQueryFetched->Passwort; /* Speichert das Passwort aus der Datenbank in einer Variable */
  
  
- $DatabaseUserPasswortHashed	= hash('sha512',$DatabaseUserPasswort); // bildet einen Hash aus dem Passwort aus der Datenbank
- $UserPasswortHashed			= hash('sha512',$UserPasswort); // bildet einen Hash aus der Passworteingabe des Users
+ $DatabaseUserPasswortHashed = hash('sha512',$DatabaseUserPasswort); /* bildet einen Hash aus dem Passwort aus der Datenbank */
+ $UserPasswortHashed = hash('sha512',$UserPasswort); /* bildet einen Hash aus der Passworteingabe des Users */
  
- if($DatabaseUserPasswortHashed != $UserPasswortHashed) // Prüfung ob sich beide Hashes gleichen
+ if($DatabaseUserPasswortHashed != $UserPasswortHashed) /* Pr≈∏fung ob sich beide Hashes gleichen */
  {
-	// Wenn nein wird der User auf die Fehlerseite umgleitet und aufgefordert sein Passwort neu einzugeben 
-	$Fehler = "passwortIncorrect"; // Variable zu Behandlung der Ausgabe auf der Fehlerseite
-	include "error.php"; // einbinden der Fehlerseite
+/* Wenn nein wird der User auf die Fehlerseite umgleitet und aufgefordert sein Passwort neu einzugeben */
+$Fehler = "passwortIncorrect"; /* Variable zu Behandlung der Ausgabe auf der Fehlerseite */
+include "error.php"; /* einbinden der Fehlerseite */
  }
  
  else
  {
-	//wenn beide Passwörter übereinstimmen wird eine Session eröffnet(http://de2.php.net/manual/de/intro.session.php)
-	session_start(); // öffnen der Session
-	$_SESSION["sitepass"]=$UserPasswortHashed; // Schreiben des Passwortes in die Session
-	include "browser_info.php"; // einbinden der browser_info.php um Informationen über den Browser zusammeln
-	$_SESSION['UserOs'] = $osName.$osVersion; // Speichern des Betriebssystems in der Session um bei späteren Aktionen diese Daten zu verwenden
-	$_SESSION['UserBrowser'] = $Browser; // Speichern des Browsers in der Session um bei späteren Aktionen diese Daten zu verwenden
-	include("main.php"); // einbinden der main.php | auf dieser Seite befinden sich alle weiteren Funktionen der Mediathek
+/* wenn beide Passw≈°rter ≈∏bereinstimmen wird eine Session er≈°ffnet(http://de2.php.net/manual/de/intro.session.php) */
+session_start(); /* ≈°ffnen der Session */
+$_SESSION["sitepass"]=$UserPasswortHashed; /* Schreiben des Passwortes in die Session */
+include "browser_info.php"; /* einbinden der browser_info.php um Informationen ≈∏ber den Browser zusammeln */
+$_SESSION['UserOs'] = $osName.$osVersion; /* Speichern des Betriebssystems in der Session um bei sp≈†teren Aktionen diese Daten zu verwenden */
+$_SESSION['UserBrowser'] = $Browser; /* Speichern des Browsers in der Session um bei sp≈†teren Aktionen diese Daten zu verwenden */
+include("main.php"); /* einbinden der main.php | auf dieser Seite befinden sich alle weiteren Funktionen der Mediathek */
 
  }
 }
