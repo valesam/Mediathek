@@ -29,6 +29,16 @@ elseif($Fehler == "passwortIncorrect")
  	* include "login.html";
  	*/
 }
+elseif( $Fehler == "noLink")
+{
+	/** Ausgabe der Fehlermedlung */
+	echo "<p id='warnings'>Kein valider link</p>";
+	/** 
+ 	* Keine Behandlung des Fehler durch das Einbinden der 404.html.Momentan noch nicht eingebunden, weil die 
+ 	* Datei noch nicht fertig gestellt ist
+ 	* include "404.html"; 
+ 	*/
+}
 else
 {
 	/* Ausgabe der Fehlermeldung wenn der Fehler nicht bekannt ist */

@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION["sitepass"]))
    {
-	$Fehler="noUser";
+	$Fehler="no";
 	include("error.php");
 	exit;
    }

@@ -4,6 +4,7 @@
 /**
 * Autor: Leon Bergmann
 * Datum: 9.2.2012 22:21
+* Last Change : 10.2.2012 11:29
 * Zweck : Menü der gesammten Webseite sowie alle anderen relevanten Navigationselemente | wird in der main.php included
 */
 -->
@@ -21,12 +22,13 @@
 		
 		<div id="navbar">
 			<div class="grpelem">
-  				<a href="index.php" id="home"></a>
-  				<a href="filme.php" id="filme">FILME</a>
-  				<a href="bilder.php" id="bilder">BILDER</a>
-  				<a href="dokumente.php" id="dokumente">DOKUMENTE</a>
-  				<a href="musik.php" id="musik">MUSIK</a>
-  				<a href="landkarten.php" id="landkarten">LANDKARTEN</a>
+  				<!-- Änderungen am 10.2.2012 um 12:28  Ändern der Links von absuluten links in realative links die in der main.php verarbeite werden -->
+  				<a href="main.php?work=index" id="home"></a>
+  				<a href="main.php?work=filme" id="filme">FILME</a>
+  				<a href="main.php?work=bilder" id="bilder">BILDER</a>
+  				<a href="main.php?work=dokumente" id="dokumente">DOKUMENTE</a>
+  				<a href="main.php?work=musik" id="musik">MUSIK</a>
+  				<a href="main.php?work=landkarten" id="landkarten">LANDKARTEN</a>
 			</div>
 		 </div>
 		<div id="content">

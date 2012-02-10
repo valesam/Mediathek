@@ -4,7 +4,7 @@
 * Datum : 9.2.2012 21:52
 * Aufgabe der Datei: Überprüft ob der User berechtigt ist die Mediathek zu benutzen!
 *
-* DafŸr wird mithilfe der Datenbank ŸberprŸft ob der User registriert ist. Danach wird das vom User eingegeben Passwort in einen SHA512 (http://de.wikipedia.org/wiki/Secure_Hash_Algorithm)
+* Dafür wird mithilfe der Datenbank ŸberprŸft ob der User registriert ist. Danach wird das vom User eingegeben Passwort in einen SHA512 (http://de.wikipedia.org/wiki/Secure_Hash_Algorithm)
 * umgewandelt, danach wird das, fals der User vorhanden ist, Passwort aus der Datenbank ebenfalls in einen
 * SHA512 Hash umgewandelt. Beide Hashes werden mit einander verglichen, sollte der eingegebene Hash dem aus der
 * Datenbank nicht gleichen, wird der User auf eine Fehlerseite glenkt und muss gegebenenfalls das Passwort wiederholen!
