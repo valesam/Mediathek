@@ -10,7 +10,7 @@ include "secoured.php"; /* Einbinden der Sicherung der Webseite*/
 include "menu.html"; /* Einbinden des Menüs*/
  
 /** Abfrage des übergebenen Parameters aus der menu.html*/
-$link $_GET['work'];
+$link = $_GET['work'];
 
 /** Prüft welcher Wert übergeben wurde*/
 if ($link == "index")
