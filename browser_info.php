@@ -1,4 +1,9 @@
 <?php
+/**
+* Autor: Florian Giller
+* Datum : unbekannt
+* Aufgabe : Auslesesen aller relevanten Daten des Clientbrowsers
+*/
 $result 	= $_SERVER['HTTP_USER_AGENT'];
 
 
