@@ -1,31 +1,19 @@
 <?php
-include("secoured.php");
+/**
+* Autor: Florian Giller
+* Datum: 9.2.2012
+* Aufgabe der Datei: Filme abspielen und aus der DB laden
+*/
+/** Änderung von Lein Bergmann am 10.2.2012 um 15:00 */
+include "menu.html"; /** Einbinden des Menüs*/
+
 ?>
-<html>
-<head><title>Die Mediathek der Schule Marienau - Filme</title>
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
-<script type="text/javascript" src="/player/jwplayer.js"></script>
-</head>
-<body>
 
-<div id="navbar">
- <div class="grpelem">
-  <a href="main.php" id="home"></a>
-  <a href="filme.php" id="filme">FILME</a>
-  <a href="bilder.php" id="bilder">BILDER</a>
-  <a href="dokumente.php" id="dokumente">DOKUMENTE</a>
-  <a href="musik.php" id="musik">MUSIK</a>
-  <a href="landkarten.php" id="landkarten">LANDKARTEN</a>
-  <div id="pfeil" style="margin-left: 163px;"></div>
- </div>
-</div>
-
-<div id="content">
 <div id="player">
 <?php
 $film_ID = $_GET["ID"];
 // Altes Übergabekonzept: Alle Infos werden per POST übergeben
-// Neues Übergabekonzept: Nur ID wird per GET von Auswahlseite übergeben. Auf abspielseite werden benötigte Infos aus DB gelade 
+// Neues Übergabekonzept: Nur ID wird per GET von Auswahlseite übergeben. Auf abspielseite werden benötigte Infos aus DB geladen 
 
 
 //Hier DB abfrage der nötigen infos durch die ID

@@ -2,8 +2,9 @@
 session_start();
 if(!isset($_SESSION["sitepass"]))
    {
-	$Fehler="no";
-	include("error.php");
+	$Fehler="noLogin";
+	include "menu.html";
+	include "error.php";
 	exit;
    }
 ?>

@@ -5,8 +5,7 @@
 * Zweck: Behandlung von Fehlern auf der gesamten Webseite
 */
 
-/* Bindet das allgemeine Menü ein */
-include "menu.html";
+
 
 /**Überprüft die Variable Fehler auf die von uns definierten Inhalte und reagiert passend  */
 if($Fehler == "noUser" )
@@ -24,10 +23,9 @@ elseif($Fehler == "passwortIncorrect")
 	/** Ausgabe der Fehlermedlung */
 	echo "<p id='warnings'>Falsches Passwort oder falscher Username!</p>";
 	/** 
- 	* Behandlung der Fehlermeldung durch das Einbinden des Loginmoduls. Momentan noch nicht eingebunden, weil die 
- 	* Datei noch nicht fertig gestellt ist
- 	* include "login.html";
- 	*/
+ 	* Behandlung des Fehler durch das Einbinden der des Loginmoduls. 
+	*/
+	include "login.html";
 }
 elseif($Fehler == "noLink")
 {
@@ -42,11 +40,11 @@ elseif($Fehler == "noLink")
 elseif($Fehler == "noLogin")
 {
 	/** Ausgabe der Fehlermedlung */
-	echo "<p id='warninga'>Sie sind nicht angemeldet</p>";
+	echo "<p id='warnings'>Sie sind nicht angemeldet</p>";
 	/** 
- 	* Keine Behandlung des Fehler durch das Einbinden der des Loginmoduls.Momentan noch nicht eingebunden, weil die 
+ 	* Behandlung des Fehler durch das Einbinden der des Loginmoduls. 
 	*/
-	include "index.php";
+	include "login.html";
 }
 else
 {
