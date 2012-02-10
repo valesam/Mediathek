@@ -5,8 +5,13 @@
 * Aufgabe der Datei:  Linkverarbeitung durch einbinden der entsprechenden Datei mittels dem include Befehls 
 *
 */
+/** NUR ZU TEST ZWECKEN*/
+// Wenn dev = 1 ist wirk keine sicherung vorgenommen
+if($_GET['dev'] != 1)
+{
+	include "secoured.php"; /* Einbinden der Sicherung der Webseite*/
+}
 
-include "secoured.php"; /* Einbinden der Sicherung der Webseite*/
 include "menu.html"; /* Einbinden des Menüs*/
  
 /** Abfrage des übergebenen Parameters aus der menu.html*/
@@ -21,7 +26,7 @@ if ($link == "index")
 elseif($link == "filme")
 {
 	/** Aktion beim Linkparameter in diesem Falle: einbinden der Filmgalerie */
-	include "film.php";
+	include "filme.php";
 }
 elseif($link == "bilder")
 {
@@ -50,3 +55,5 @@ else
 	include "error.php";
 }
 ?>
+	</body>
+</html>

@@ -5,7 +5,7 @@
 * Aufgabe der Datei: Filme abspielen und aus der DB laden
 */
 /** Änderung von Lein Bergmann am 10.2.2012 um 15:00 */
-include "menu.html"; /** Einbinden des Menüs*/
+
 
 ?>
 
