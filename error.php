@@ -29,7 +29,7 @@ elseif($Fehler == "passwortIncorrect")
  	* include "login.html";
  	*/
 }
-elseif( $Fehler == "noLink")
+elseif($Fehler == "noLink")
 {
 	/** Ausgabe der Fehlermedlung */
 	echo "<p id='warnings'>Kein valider link</p>";
@@ -38,6 +38,15 @@ elseif( $Fehler == "noLink")
  	* Datei noch nicht fertig gestellt ist
  	* include "404.html"; 
  	*/
+}
+elseif($Fehler == "noLogin")
+{
+	/** Ausgabe der Fehlermedlung */
+	echo "<p id='warninga'>Sie sind nicht angemeldet</p>";
+	/** 
+ 	* Keine Behandlung des Fehler durch das Einbinden der des Loginmoduls.Momentan noch nicht eingebunden, weil die 
+	*/
+	include "index.php";
 }
 else
 {
