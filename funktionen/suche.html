@@ -1,5 +1,39 @@
-<form action="" method="post">
-<h1 style="margin-left: 120px;">
+<?php
+/** 
+*Autor: Leon Bergmann & Florian Giller
+*Datum: unbekannt 	
+*Zweck: Such Menü für Filme
+*/
+/**
+	include "connect";
+	$sql = "Select Titel from Filme";
+	$res = mysql_query($sql) or die ("<p id='warnings'>Keine Verbindung zur Mediathek</p>");
+	$filmData = mysql_fetch_array($res);
+* Aus Testgründen wird hier ein vordefinierties array verwendet später werden die Daten aus der DB geladen 
+*/
+$filmData = array("James Bond - Goldfinger","Resident Evil","Underworld","Balde","Lion");
+$json = json_encode($filmData);
+?>
+<form action="#" method="post">
+	<script>
+		$(function() {
+			// JavaScript Datenerhebung
+			var json = '<?= $json ?>';
+ 			// Brücke zwischen PHP und JavaScript (clientseitig)
+			var data = eval('(' + json + ')');
+			
+			var availableTags = data;
+			$( "#tags" ).autocomplete({
+					source: availableTags
+				});
+			});
+	</script>
+	
+	<div class="ui-widget">
+		<label for="tags">Tags: </label>
+		<input id="tags" name="film" />
+	</div>
+<!--<h1>
 	Suchen Sie einen Film aus</h1>
 <table border="0" cellpadding="1" cellspacing="1" style="width: 561px; height: 146px;">
 	<tbody>
@@ -43,4 +77,5 @@
 <p style="margin-left: 120px;">
 	<input name="Submit" type="submit" value="Film zeigen" /></p>
 	<input type="hidden" name="film" value="/mediathek/uploads/video.mp4">
+-->
 </form>

@@ -8,8 +8,8 @@
 
 
 ?>
-
-<div id="player">
+<!-- Änderung am 11.2.2012 um 15:02 vom Leon Bergmann! Änderung der Styleclass des Mediaplayers -->
+<div id="mediaplayer">
 <?php
 $film_ID = $_GET["ID"];
 // Altes Übergabekonzept: Alle Infos werden per POST übergeben
@@ -33,6 +33,7 @@ $film_preview = "/mediathek/player/preview.jpg";
 include("funktionen/suche.html");
 if (!empty($film))
 {
+
 echo "
 <h2>$film_titel</h2>
 
@@ -54,7 +55,7 @@ echo "
 }
 else
 {
-echo "Es wurde kein Film ausgew&auml;hlt!";
+echo "<p id='warnings'>Es wurde kein Film ausgew&auml;hlt!</p>";
 }
 
 ?>

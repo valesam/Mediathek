@@ -1,3 +1,9 @@
+/**
+* Autor: Valerio Sampognaro 
+* Datum: Unbekannt
+* Aufgabe: Definitionen des Styles des Portals
+*
+*/
 html {
 background-color: #e1eee6;
 }
@@ -23,7 +29,7 @@ text-decoration: none
 }
 
 /*Navigationsleiste oben*/
-#navbar {
+#navibar {
 height: 27px;
 background-color: #151515;
 margin-top: 0px;
