@@ -9,15 +9,17 @@
 	$sql = "Select Titel from Filme";
 	$res = mysql_query($sql) or die ("<p id='warnings'>Keine Verbindung zur Mediathek</p>");
 	$filmData = mysql_fetch_array($res);
-* Aus Testgründen wird hier ein vordefinierties array verwendet später werden die Daten aus der DB geladen 
+* Aus Testgründen wird hier ein vordefiniertes  Array verwendet später werden die Daten aus der DB geladen 
 */
-$filmData = array("James Bond - Goldfinger","Resident Evil","Underworld","Balde","Lion");
+
+
+$filmData = array("James Bond - Goldfinger","Resident Evil","Underworld","Balde","Lion","Terminator","Back to the Futur","Hot Fuzz");
 $json = json_encode($filmData);
+
 ?>
-<form action="#" method="post">
 	<script>
 		$(function() {
-			// JavaScript Datenerhebung
+			// Übernimmt die Daten des mit JSON codierten Array aus dem PHP CODE
 			var json = '<?= $json ?>';
  			// Brücke zwischen PHP und JavaScript (clientseitig)
 			var data = eval('(' + json + ')');
@@ -28,11 +30,36 @@ $json = json_encode($filmData);
 				});
 			});
 	</script>
+	<script>
+	function speichern(){
+	 	var film = document.getElementById("tags").value;
+	 	document.getElementById("id").value = film;
+	 	document.Film.submit();
+	}
+	</script>
 	
-	<div class="ui-widget">
+	<!-- Scuhfeld Definition -->
+	<div style="margin-top:120px;">
 		<label for="tags">Tags: </label>
-		<input id="tags" name="film" />
+		<input id="tags" name="film"/>
+		<input type="submit" value="Suchen" onclick="speichern()">
 	</div>
+	
+	<!-- Versteckes Formular in dem die Werte an die filme.php übergeben werden, als zwischen Schritt und um das Menü eibinden zukönnen wird die main.php als target eingetragen -->
+	<form name="Film" action="main.php" />
+		<input type="hidden" name="film" id="id" />
+		<input type="hidden" name="work" value="filme" />
+		<input type="hidden" name="dev" value="1"/>
+	</form>
+
+
+
+
+
+
+
+
+<!-- ALTER CODE NICHT ZU BEACHTEN -->
 <!--<h1>
 	Suchen Sie einen Film aus</h1>
 <table border="0" cellpadding="1" cellspacing="1" style="width: 561px; height: 146px;">
@@ -78,4 +105,3 @@ $json = json_encode($filmData);
 	<input name="Submit" type="submit" value="Film zeigen" /></p>
 	<input type="hidden" name="film" value="/mediathek/uploads/video.mp4">
 -->
-</form>

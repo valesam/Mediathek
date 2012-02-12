@@ -4,16 +4,16 @@
 * Datum: 9.2.2012
 * Aufgabe der Datei: Filme abspielen und aus der DB laden
 */
-/** Änderung von Lein Bergmann am 10.2.2012 um 15:00 */
+/** Änderung von Leon Bergmann am 10.2.2012 um 15:00 */
 
 
 ?>
 <!-- Änderung am 11.2.2012 um 15:02 vom Leon Bergmann! Änderung der Styleclass des Mediaplayers -->
 <div id="mediaplayer">
 <?php
-$film_ID = $_GET["ID"];
+$Film_Titel = $_GET["film"];
 // Altes Übergabekonzept: Alle Infos werden per POST übergeben
-// Neues Übergabekonzept: Nur ID wird per GET von Auswahlseite übergeben. Auf abspielseite werden benötigte Infos aus DB geladen 
+// Neues Übergabekonzept: Nu0r ID wird per GET von Auswahlseite übergeben. Auf abspielseite werden benötigte Infos aus DB geladen 
 
 
 //Hier DB abfrage der nötigen infos durch die ID
@@ -31,11 +31,11 @@ $film_beschreibung = "";
 $film_preview = "/mediathek/player/preview.jpg";
 
 include("funktionen/suche.html");
-if (!empty($film))
+if (!empty($Film_Titel))
 {
 
 echo "
-<h2>$film_titel</h2>
+<h2>$Film_Titel</h2>
 
 <div id='mediaplayer'>Player nicht verf&uuml;gbar!</div>
 	
@@ -65,5 +65,3 @@ echo "<p id='warnings'>Es wurde kein Film ausgew&auml;hlt!</p>";
 
 </div>
 </div>
-</body>
-</html>
