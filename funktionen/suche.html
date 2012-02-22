@@ -30,6 +30,7 @@ $json = json_encode($filmData);
 				});
 			});
 	</script>
+	<!-- Durch AJAX Funktion Abgelöst
 	<script>
 	function speichern(){
 	 	var film = document.getElementById("tags").value;
@@ -37,20 +38,53 @@ $json = json_encode($filmData);
 	 	document.Film.submit();
 	}
 	</script>
+	-->
+	<script>
+	// Neue Javascript Funktion mit AJAX [http://de.wikipedia.org/wiki/Ajax_%28Programmierung%29]
+	function mi(){
+		// Name des Films aus der Autovervollständigung
+		var film = document.getElementById("tags").value; 
+	    // Neue Variable
+		var params  = "ajax=1&film="+film;
+		// Ziel Datei
+		var url = "filme.php";
+		// Erstellen des Requests
+		var http = new XMLHttpRequest();
+		// Verbindung definieren
+		http.open("POST", url, true);
+
+		// Header Informationen setzen
+		http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		http.setRequestHeader("Content-length", params.length);
+		http.setRequestHeader("Connection", "close");
+		http.onreadystatechange = function() {//Call a function when the state changes.
+			// Wenn die Rückgabe der Date dem readyState 4 und dem https status 200 entspricht wird 
+			// die Rückgabe in die <div> Ausgabe geschrieben
+			if(http.readyState == 4 && http.status == 200) {
+				
+				document.getElementById("Ausgabe").innerHTML = http.responseText;
+			}
+		}
+		// Abschicken der des Requesrts
+		http.send(params);
+		};
+	</script>
 	
 	<!-- Scuhfeld Definition -->
 	<div style="margin-top:120px;">
 		<label for="tags">Tags: </label>
 		<input id="tags" name="film"/>
-		<input type="submit" value="Suchen" onclick="speichern()">
+		<input type="submit" value="Absenden" onclick="mi()">
 	</div>
-	
-	<!-- Versteckes Formular in dem die Werte an die filme.php übergeben werden, als zwischen Schritt und um das Menü eibinden zukönnen wird die main.php als target eingetragen -->
+	<div id="Ausgabe"></div>
+	<!--ALTEWR CODE NICHT BEACHTEN
+	Versteckes Formular in dem die Werte an die filme.php übergeben werden, als zwischen Schritt und um das Menü eibinden zukönnen wird die main.php als target eingetragen 
 	<form name="Film" action="main.php" />
 		<input type="hidden" name="film" id="id" />
 		<input type="hidden" name="work" value="filme" />
 		<input type="hidden" name="dev" value="1"/>
 	</form>
+	-->
 
 
 
