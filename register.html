@@ -1,0 +1,40 @@
+<!--Wenn diese Seite eingebunden wird, wird die login form 50 px vom Objekt links vom der Form posizioniert-->
+<script>
+	$(function() {
+		 document.getElementById("login_form").style.marginLeft = "50px";
+	});
+</script>
+
+<form name="register" action="register.php" id="register_form">
+	<h1><center>Registrieren</center></h1>
+	<ul>
+		<li>
+			Username:
+			<ul>
+				<li><input type="text" name="username" /></li>
+			</ul>
+		</li>
+		<li>
+			Email:
+			<ul>
+				<li><input type="text" name="email" /></li>
+			</ul>
+		</li>
+		<li>
+			Passwort:
+			<ul>
+				<li><input type="password" name="password" /></li>
+			</ul>
+		</li>
+		<li>
+			Passwort widerholen:
+			<ul>
+				<li><input type="password" name="password2" /></li>
+			</ul>
+		</li>
+
+		<li>
+			<input type="submit" Value="register" />
+		</li>
+	</ul>
+</form>

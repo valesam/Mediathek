@@ -1,4 +1,3 @@
-
 <?php
 /**
 * Autor: Leon Bergmann

@@ -11,7 +11,6 @@ if($_GET['dev'] != 1)
 {
 	include "secoured.php"; /* Einbinden der Sicherung der Webseite*/
 }
-
 include "menu.html"; /* Einbinden des Menüs*/
  
 /** Abfrage des übergebenen Parameters aus der menu.html*/
@@ -23,6 +22,7 @@ if ($link == "index")
 	/** Aktion beim Linkparameter in diesem Falle: einbinden der Homeseite*/ 
 	include "home.php";
 }
+
 elseif($link == "filme")
 {
 	/** Aktion beim Linkparameter in diesem Falle: einbinden der Filmgalerie */

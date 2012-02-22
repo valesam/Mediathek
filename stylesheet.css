@@ -199,6 +199,34 @@ behavior:url(style/border-radius.htc);
 #login_form li{
 list-style-type: none;
 }
+/*Registerformular von Leon Bergmann am 22.2.2012 um 23:28*/
+#register_form {
+
+/* Abstand und Ausrichtung des Elements */
+margin-top: -220px;
+margin-left: auto;
+margin-right: 50px;
+width: 300px;
+
+/* Schrift Definition*/
+color: #FFFFFF;
+font-weight: bold;
+font-size: 16px;
+
+/* Schatten für den register + Hintergrundfarbe */
+border: 1px solid #bbbbbb;
+background-color: #AAABB0;
+-moz-border-radius:6px;
+-webkit-border-radius:6px;
+-khtml-border-radius:6px;
+border-radius:6px;
+behavior:url(style/border-radius.htc);
+}
+
+/* Unterklasse register_form li*/
+#register_form li{
+list-style-type: none;
+}
 
 /* Anzeigeart der Fehlermeldung */
 /* Änderungen am 10.2.2012 00:12 von Leon Bergmann */
