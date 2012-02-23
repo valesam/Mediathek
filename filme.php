@@ -44,7 +44,7 @@ if($AJAX == 0)
 }
 else
 {
-	if (!empty($Film_Titel))
+	if (!empty($Film_Titel) or 1==1)
 	{
 
 	echo "
