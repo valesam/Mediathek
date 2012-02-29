@@ -45,10 +45,10 @@ behavior:url(style/border-radius.htc);
 
 /*Home-Button, erster*/
 #home {
-background-image: url("style/home.png");
+background-image: url("home.png");
 background-repeat: no-repeat;
 background-position: center top;
-margin-left: -20px;
+margin-left: 7px;
 margin-top: 7px;
 position: absolute;
 height: 22px;
@@ -57,7 +57,7 @@ width: 20px;
 
 /*Home-Button mit Mouseover*/
 #home:hover {
-background-image: url("style/homehover.png");
+background-image: url("homehover.png");
 }
 
 /*Filme-Button, zweiter*/

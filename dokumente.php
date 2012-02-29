@@ -4,7 +4,9 @@
 include("auslesen.php");
 include("hochladen.php");
 ?>
-</div>
 
-</body>
-</html>
+<script>
+</script>
+Auf&uuml;hren PHP:<input id='a'>
+<input type='button' onclick='ex()'value="Exe">
+</div>
