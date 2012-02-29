@@ -16,16 +16,17 @@ if(!empty($_POST['username']) or !empty($_POST['password']) or !empty($_POST['pa
 	$Email = $_POST['email'];
 	if($newPasswortCheck != $newPasswortCheckHashed)
 	{
-		echo "<font color='#FF0000'><b>Die Passwörter Stimmen nicht überein!</b></font>";
-		include "../main.php";
+		$Fehler = "passwortNotMatch"; /* Variable zu Behandlung der Ausgabe auf der Fehlerseite */
+		include "../error.php"; /* einbinden der Fehlerseite */
 	}
 	else
 	{
 		$rest	= mysql_query("SELECT * FROM med_user where Username = '$Username'");
 		if(mysql_num_rows($rest) != 0)
 		{
-			echo "<font color='#FF0000'><b>Benutzername bereits vergeben! Bitte geben sie einen Alternativen Namen ein!</b></font>";
-			include "../main.php";
+			
+		$Fehler = "usernameAlreadyExist"; /* Variable zu Behandlung der Ausgabe auf der Fehlerseite */
+		include "../error.php"; /* einbinden der Fehlerseite */
 		}
 		else
 		{
@@ -40,7 +41,8 @@ if(!empty($_POST['username']) or !empty($_POST['password']) or !empty($_POST['pa
 }
 else
 {
-	echo"<font color='#FF0000'><b>Es ist ein Fehler in der Eingabe aufgetreten!</b></font>";
-	include "../main.php";
+	$Fehler = "usernameAlreadyExist"; /* Variable zu Behandlung der Ausgabe auf der Fehlerseite */
+		include "../error.php"; /* einbinden der Fehlerseite */
+		
 }
-?> 
+?>

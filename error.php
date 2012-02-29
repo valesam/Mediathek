@@ -46,6 +46,33 @@ elseif($Fehler == "noLogin")
 	*/
 	include "login.html";
 }
+elseif($Fehler == "passwortNotMatch")
+{
+	/** Ausgabe der Fehlermedlung */
+	echo "<p id='warnings'>Die Passwörter Stimmen nicht überein!</p>";
+	/** 
+ 	* Behandlung des Fehler durch das Einbinden der des Loginmoduls. 
+	*/
+	include "login.html";
+}
+elseif($Fehler == "usernameAlreadyExist")
+{
+	/** Ausgabe der Fehlermedlung */
+	echo "<p id='warnings'>Benutzername bereits vergeben! Bitte geben sie einen Alternativen Namen ein!</p>";
+	/** 
+ 	* Behandlung des Fehler durch das Einbinden der des Loginmoduls. 
+	*/
+	include "login.html";
+}
+elseif($Fehler == "notComplete")
+{
+	/** Ausgabe der Fehlermedlung */
+	echo "<p id='warnings'>Es sind nicht alle Felder ausgefüllt!</p>";
+	/** 
+ 	* Behandlung des Fehler durch das Einbinden der des Loginmoduls. 
+	*/
+	include "login.html";
+}
 else
 {
 	/* Ausgabe der Fehlermeldung wenn der Fehler nicht bekannt ist */
@@ -54,4 +81,4 @@ else
 ?>
 		</div>
 	</body>
-</html> 
+</html>
