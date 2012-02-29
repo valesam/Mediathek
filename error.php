@@ -4,9 +4,6 @@
 * Datum: 9.2.2012 22:33
 * Zweck: Behandlung von Fehlern auf der gesamten Webseite
 */
-
-
-
 /**Überprüft die Variable Fehler auf die von uns definierten Inhalte und reagiert passend  */
 if($Fehler == "noUser" )
 {
