@@ -18,11 +18,12 @@ $Username = $_POST['username']; /* †bergabe des Usernamen */
 
 $sql = "SELECT * FROM med_user where Username = '$Username'"; /* SQL Query Definition die einen Datensatz aus der Datenbank abruft welcher den Username das User trŠgt */
 
-$resultOfQuery = mysql_query($sql); /* AusfŸhren der oben beschriebenen Query */
+$resultOfQuery = mysql_query($sql) or die (mysql_error()); /* AusfŸhren der oben beschriebenen Query */
 
 if(mysql_num_rows($resultOfQuery) == 0) /* †berprŸfung ob die abfrage ein Ergebniss hatte | Die funktion mysql_num_rows ŸberprŸft die Anzahl der Ergebnisse (http://php.net/manual/de/function.mysql-num-rows.php) */
 {
 /* wenn das Ergebnis 0 ist, also der User nicht in der Datenbank ist wird folgender Quellcode ausgefŸhrt: */
+include "main.php";
 $Fehler = "noUser"; /* Variable zu Behandlung der Ausgabe auf der Fehlerseite */
 include "error.php"; /* einbinden der Fehlerseite */
 }
@@ -33,10 +34,10 @@ else /* Wenn der User in der Datenbank ist wird folgender Quellcode ausgefŸhrt 
  $DatabaseUserPasswort = $resultOfQueryFetched->Passwort; /* Speichert das Passwort aus der Datenbank in einer Variable */
  
  
- $DatabaseUserPasswortHashed = hash('sha512',$DatabaseUserPasswort); /* bildet einen Hash aus dem Passwort aus der Datenbank */
+// veraltet $DatabaseUserPasswortHashed = hash('sha512',$DatabaseUserPasswort); /* bildet einen Hash aus dem Passwort aus der Datenbank */
  $UserPasswortHashed = hash('sha512',$UserPasswort); /* bildet einen Hash aus der Passworteingabe des Users */
  
- if($DatabaseUserPasswortHashed != $UserPasswortHashed) /* PrŸfung ob sich beide Hashes gleichen */
+ if($$DatabaseUserPasswort != $UserPasswortHashed) /* PrŸfung ob sich beide Hashes gleichen */
  {
 /* Wenn nein wird der User auf die Fehlerseite umgleitet und aufgefordert sein Passwort neu einzugeben */
 $Fehler = "passwortIncorrect"; /* Variable zu Behandlung der Ausgabe auf der Fehlerseite */
@@ -48,7 +49,7 @@ include "error.php"; /* einbinden der Fehlerseite */
 /* wenn beide Passwšrter Ÿbereinstimmen wird eine Session eršffnet(http://de2.php.net/manual/de/intro.session.php) */
 session_start(); /* šffnen der Session */
 $_SESSION["sitepass"]=$UserPasswortHashed; /* Schreiben des Passwortes in die Session */
-include "browser_info.php"; /* einbinden der browser_info.php um Informationen Ÿber den Browser zusammeln */
+include "browser_info.php"; /* einbinden der browser_info.php um Informationen ueber den Browser zusammeln */
 $_SESSION['UserOs'] = $osName.$osVersion; /* Speichern des Betriebssystems in der Session um bei spŠteren Aktionen diese Daten zu verwenden */
 $_SESSION['UserBrowser'] = $Browser; /* Speichern des Browsers in der Session um bei spŠteren Aktionen diese Daten zu verwenden */
 include("main.php"); /* einbinden der main.php | auf dieser Seite befinden sich alle weiteren Funktionen der Mediathek */
