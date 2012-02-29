@@ -43,4 +43,4 @@ else
 	echo"<font color='#FF0000'><b>Es ist ein Fehler in der Eingabe aufgetreten!</b></font>";
 	include "../main.php";
 }
-?>
+?> 
