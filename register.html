@@ -5,36 +5,36 @@
 	});
 </script>
 
-<form name="register" action="register.php" id="register_form">
+<form method="post" name="register" action="funktionen/user_registrieren.php" id="register_form" accept-charset="utf-8">
 	<h1><center>Registrieren</center></h1>
 	<ul>
 		<li>
 			Username:
 			<ul>
-				<li><input type="text" name="username" /></li>
+				<li><input type="text" name="username" maxlength="50" size="24"/></li>
 			</ul>
 		</li>
 		<li>
 			Email:
 			<ul>
-				<li><input type="text" name="email" /></li>
+				<li><input type="text" name="email" maxlength="50" size="24"/></li>
 			</ul>
 		</li>
 		<li>
 			Passwort:
 			<ul>
-				<li><input type="password" name="password" /></li>
+				<li><input type="password" name="password" maxlength="50" size="24"/></li>
 			</ul>
 		</li>
 		<li>
 			Passwort widerholen:
 			<ul>
-				<li><input type="password" name="password2" /></li>
+				<li><input type="password" name="password_check" maxlength="50" size="24"/></li>
 			</ul>
 		</li>
 
 		<li>
-			<input type="submit" Value="register" />
+			<input type="submit" Value="Registrieren" />
 		</li>
 	</ul>
 </form>
