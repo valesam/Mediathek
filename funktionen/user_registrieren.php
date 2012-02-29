@@ -16,16 +16,9 @@ if(!empty($_POST['username']) or !empty($_POST['password']) or !empty($_POST['pa
 	$Email = $_POST['email'];
 	if($newPasswortCheck != $newPasswortCheckHashed)
 	{
-<<<<<<< HEAD
+
 		$Fehler = "passwortNotMatch"; /* Variable zu Behandlung der Ausgabe auf der Fehlerseite */
 		include "../error.php"; /* einbinden der Fehlerseite */
-=======
-		echo "<font color='#FF0000'><b>Die Passwörter Stimmen nicht überein!</b></font>";
-		include "../menu.html";
-		$Fehler = "noUser";
-		include "../error.php";
-		#include "../main.php";
->>>>>>> register update
 	}
 	else
 	{

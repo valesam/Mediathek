@@ -22,7 +22,7 @@ elseif($Fehler == "passwortIncorrect")
 	/** 
  	* Behandlung des Fehler durch das Einbinden der des Loginmoduls. 
 	*/
-	include "login.html";
+	
 }
 elseif($Fehler == "noLink")
 {
@@ -50,7 +50,7 @@ elseif($Fehler == "passwortNotMatch")
 	/** 
  	* Behandlung des Fehler durch das Einbinden der des Loginmoduls. 
 	*/
-	include "login.html";
+
 }
 elseif($Fehler == "usernameAlreadyExist")
 {
@@ -59,7 +59,7 @@ elseif($Fehler == "usernameAlreadyExist")
 	/** 
  	* Behandlung des Fehler durch das Einbinden der des Loginmoduls. 
 	*/
-	include "login.html";
+	
 }
 elseif($Fehler == "notComplete")
 {
