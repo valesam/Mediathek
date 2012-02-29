@@ -11,10 +11,11 @@ if(!empty($_POST['username']) or !empty($_POST['password']) or !empty($_POST['pa
 	
 	$newPasswort = $_POST['password'];
 	$newPasswortCheck = $_POST['password_check'];
+	
 	$newPasswortHashed = hash('sha512',$newPasswort);
 	$newPasswortCheckHashed = hash('sha512',$newPasswortCheck);
 	$Email = $_POST['email'];
-	if($newPasswortCheck != $newPasswortCheckHashed)
+	if($newPasswortHashed != $newPasswortCheckHashed)
 	{
 
 		$Fehler = "passwortNotMatch"; /* Variable zu Behandlung der Ausgabe auf der Fehlerseite */
@@ -34,7 +35,8 @@ if(!empty($_POST['username']) or !empty($_POST['password']) or !empty($_POST['pa
 			$sql = "INSERT INTO med_user (Username,Passwort,Email) VALUES ('$Benutername','$newPasswortCheckHashed','$Email')";
 			$rests = mysql_query($sql);
 			echo "<font color='#00FF00'><b>Neuer Benutzer angelegt!</b></font>";
-			include "../main.php";
+			$_SESSION['sitepass'] = 1;
+			
 
 		}
 		

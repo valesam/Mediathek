@@ -37,7 +37,7 @@ else /* Wenn der User in der Datenbank ist wird folgender Quellcode ausgefŸhrt 
 // veraltet $DatabaseUserPasswortHashed = hash('sha512',$DatabaseUserPasswort); /* bildet einen Hash aus dem Passwort aus der Datenbank */
  $UserPasswortHashed = hash('sha512',$UserPasswort); /* bildet einen Hash aus der Passworteingabe des Users */
  
- if($$DatabaseUserPasswort != $UserPasswortHashed) /* PrŸfung ob sich beide Hashes gleichen */
+ if($DatabaseUserPasswort != $UserPasswortHashed) /* PrŸfung ob sich beide Hashes gleichen */
  {
 /* Wenn nein wird der User auf die Fehlerseite umgleitet und aufgefordert sein Passwort neu einzugeben */
 $Fehler = "passwortIncorrect"; /* Variable zu Behandlung der Ausgabe auf der Fehlerseite */
@@ -52,7 +52,8 @@ $_SESSION["sitepass"]=$UserPasswortHashed; /* Schreiben des Passwortes in die Se
 include "browser_info.php"; /* einbinden der browser_info.php um Informationen ueber den Browser zusammeln */
 $_SESSION['UserOs'] = $osName.$osVersion; /* Speichern des Betriebssystems in der Session um bei spŠteren Aktionen diese Daten zu verwenden */
 $_SESSION['UserBrowser'] = $Browser; /* Speichern des Browsers in der Session um bei spŠteren Aktionen diese Daten zu verwenden */
-include("main.php"); /* einbinden der main.php | auf dieser Seite befinden sich alle weiteren Funktionen der Mediathek */
+$_GET['work'] = "filme";
+include "main.php"; /* einbinden der main.php | auf dieser Seite befinden sich alle weiteren Funktionen der Mediathek */
 
  }
 }
