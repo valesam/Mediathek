@@ -21,7 +21,7 @@ $AJAX 		= $_POST["ajax"];
 */
 //Hier DB abfrage der nötigen infos durch die den Film Titel
 #########################################################################
-$film_pfad = "";
+$film_pfad = "/mediathek/uploads/video.mp4";
 $film_preview = "";
 $film_titel = "Filmname";
 $film_beschreibung = "";
