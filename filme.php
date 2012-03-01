@@ -43,8 +43,9 @@ if($AJAX == 0)
 	include("funktionen/suche.html");
 }
 else
-{
-	if (!empty($Film_Titel) or 1==1)
+{	$film_pfad = "/mediathek/uploads/video.mp4";
+
+	if (!empty($Film_Titel))
 	{
 
 	echo "
