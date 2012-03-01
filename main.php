@@ -46,7 +46,7 @@ elseif ($link == "musik")
 elseif($link == "landkarten")
 {
 	/** Aktion beim Linkparameter in diesem Falle: einbinden  des Lankartenmoduks*/
-	include "lankarten.php";
+	include "landkarten.php";
 }
 else
 {
