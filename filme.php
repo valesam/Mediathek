@@ -73,16 +73,8 @@ $json = json_encode($filmData);
 			if(http.readyState == 4 && http.status == 200) 
 			{
 				
-				var data = http.responseText.split("#"); 
+				document.getElementById("mediaplayer").innerHTML = http.responseText;
 	
-				jwplayer('mediaplayer').setup(
-				{
-					flashplayer: '/mediathek/player/player.swf',
-					file: data[0],
-					image: data[1]
-				}
-				);
-				document.getElementById("beschreibung").innerHTML = data[2];
 			}
 		}
 		// Abschicken der des Requesrts
@@ -99,6 +91,5 @@ $json = json_encode($filmData);
 	</div>
 	<div style="padding-top:60px;">
 		<div id="mediaplayer"></div>
-		<div id="beschreibung"></div>
 	</div>
 
