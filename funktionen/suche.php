@@ -10,7 +10,7 @@ $AJAX 		= $_POST["ajax"];
 */
 //Hier DB abfrage der nötigen infos durch die den Film Titel
 #########################################################################
-$film_pfad = "..%2FMediathek%2Fuploads%2Fvideo.mp4";
+$film_pfad = "http://localhost/Mediathek/uploads/video.mp4";
 $film_preview = "";
 $film_titel = "Filmname";
 $film_beschreibung = "<h1>Das ist ein Test</h1>";
@@ -26,6 +26,6 @@ $film_preview = "/mediathek/player/preview.jpg";
 echo "<object ".$film_player_size."> <param name='movie' value='../Mediathek/player/StrobeMediaPlayback.swf'></param>
 <param name='flashvars' value='src=".$film_pfad."&post=".$film_preview."'></param>
 <param name='allowFullScreen' value='true'></param><param name='allowscriptaccess' value='always'></param>
-<param name='wmode' value='direct'></param><embed src='../Mediathek/player/StrobeMediaPlayback.swf' type='application/x-shockwave-flash' allowscriptaccess='always' allowfullscreen='true' wmode='direct' ".$film_player_size." flashvars='src=".$film_pfad."&post=".$film_preview."'></embed></object>";
+<param name='wmode' value='direct'></param><embed src='http://localhost/Mediathek/player/StrobeMediaPlayback.swf' type='application/x-shockwave-flash' allowscriptaccess='always' allowfullscreen='true' wmode='direct' ".$film_player_size." flashvars='src=".$film_pfad."&post=".$film_preview."'></embed></object>";
 
 ?>
