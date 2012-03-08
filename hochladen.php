@@ -14,26 +14,9 @@ Filename:
 <br>
 <input type="Text" size="24" maxlength="50" name="file_name"></input>
 <br>
-
+Filmbeschreibung:
 <br>
-<tr>
-<td><input type ="radio" name="FSK" value="18">FSK ab 18</input></td>
-<td><input type ="radio" name="FSK" value="16">FSK ab 16</input></td>
-</tr>
-<tr>
-<td><input type ="radio" name="FSK" value="12">FSK ab 12</input></td>
-<td><input type ="radio" name="FSK" value="6">FSK ab 6</input></td>
-</tr>
-
-<tr>
-<td><h3>Bewertung:</h3></td>
-<td><input type ="radio" name="Bewertung" value="5">*****</input></td>
-<td><input type ="radio" name="Bewertung" value="4">****</input></td>
-<td><input type ="radio" name="Bewertung" value="3">***</input></td>
-<td><input type ="radio" name="Bewertung" value="2">**</input></td>
-<td><input type ="radio" name="Bewertung" value="1">*</input></td>
-</tr>
-
+<textarea name="Beschreibung" cols="50" rows="10"></textarea>
 <tr>
 <td>W&auml;hlen Sie eine Videodatei (mp4, flv, 3gp usw.) von Ihrem Rechner aus, um sie hochzuladen</td>
 <td><input name="datei" type="file" size="50" maxlength="100000" accept="text/*"></td>
