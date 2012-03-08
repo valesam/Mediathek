@@ -54,9 +54,38 @@ width: 498px
 }
 .homeApp1.Box ul
 {
-
 list-style-type: none;
 line-height: 28px;
+}
+
+.homeApp2.Title{
+margin-top: -170px;
+margin-left: 800px;
+margin-bottom: -170px;
+width:100px;
+height: 30px;
+background-color:#131713;
+-moz-border-radius:4px;
+-webkit-border-radius:4px;
+-khtml-border-radius:4px;
+behavior:url(style/border-radius.htc);
+position: absolute;
+line-height: 28px;
+}
+.homeApp2.Title lable{
+padding-left: 12px !important;
+color: #FFFFFF;
+}
+.homeApp2.Box{
+margin-left: 800px;
+margin-top: -140px;
+position: absolute;
+padding-top: 25px;
+border: 1px solid #000000 !important;
+width: 98px
+}
+.homeApp2.Box img{
+padding-left:15px;
 }
 /*Navigationsleiste oben*/
 #navibar {
@@ -234,9 +263,9 @@ list-style-type: none;
 #register_form {
 
 /* Abstand und Ausrichtung des Elements */
-margin-top: -220px;
-margin-left: auto;
-margin-right: 50px;
+
+margin-left: auto;;
+margin-right: auto;
 width: 300px;
 
 /* Schrift Definition*/

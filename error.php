@@ -12,8 +12,9 @@ if($Fehler == "noUser" )
  	/** 
  	* Behandlung der Fehlermeldung durch das Einbinden des Registrierungsmoduls. Momentan noch nicht eingebunden, weil die 
  	* datei noch nicht fertig gestellt ist
- 	* include "registrieren.html";
- 	*/
+ 	*/ 
+ 	include "register.html";
+ 	
 }
 elseif($Fehler == "passwortIncorrect")
 {
@@ -22,7 +23,7 @@ elseif($Fehler == "passwortIncorrect")
 	/** 
  	* Behandlung des Fehler durch das Einbinden der des Loginmoduls. 
 	*/
-	
+	include "login.html";
 }
 elseif($Fehler == "noLink")
 {
@@ -50,7 +51,7 @@ elseif($Fehler == "passwortNotMatch")
 	/** 
  	* Behandlung des Fehler durch das Einbinden der des Loginmoduls. 
 	*/
-
+	include "login.html";
 }
 elseif($Fehler == "usernameAlreadyExist")
 {
@@ -59,7 +60,7 @@ elseif($Fehler == "usernameAlreadyExist")
 	/** 
  	* Behandlung des Fehler durch das Einbinden der des Loginmoduls. 
 	*/
-	
+	include "login.html";
 }
 elseif($Fehler == "notComplete")
 {

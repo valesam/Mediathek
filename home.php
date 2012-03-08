@@ -21,6 +21,7 @@ if(!empty($_SESSION['user']))
  echo "<div class='home'>";
  // Einbinden der HomeApp Passwort wächseln
  include "PasswortChange.html";
+ include "logout.html";
  echo "</div>";
 }
 else
