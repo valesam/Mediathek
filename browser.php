@@ -1,7 +1,7 @@
 <?php 
 $work = $_SERVER['HTTP_USER_AGENT']; 
 $browser = explode("(",$work);
-$browser = $browser[0];
+echo $browser = $browser[0];
 
 #$Os = explode(")",$work);
 #$Os1 = $Os[0]; 
@@ -11,7 +11,7 @@ foreach($Os as $os)
 {
 echo $os."<br>";
 }
-
+ 
 echo $browser."<br>".$Os."<br>"; 
 
 if (! isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {

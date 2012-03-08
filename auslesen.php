@@ -1,9 +1,16 @@
 Arbeitsverzeichnis
 <ul>
+<pre>
 <?php
 
 $ordner = "files"; // ordner name
-$alledatein = scandir($ordner); // dursuchen des ordners
+
+print_r ($alledatein = scandir($ordner)); // dursuchen des ordners
+
+if(in_array("isndex.html",$alledatein))
+{
+echo "Es gib ne indäx";
+}
 
 foreach($alledatein as $datei) //dursuchen / temporär speichern in variable / ausgeben
 {

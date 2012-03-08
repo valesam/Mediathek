@@ -1,22 +1,41 @@
 <h1>Neuen Film hochladen</h1>
 <form action="upload.php" method="post" enctype="multipart/form-data">
+<?php 
+session_start();
+
+
+//Abfrage ob gerade eine Fehlerkorektur eines Uploades durchgefürht wird
+if ($_SESSION["fehlerImUpload"] == true)
+{
+	
+	// Abfrage der Daten aus dem Vorherigen Formular
+	$Filmtitel 		= $_SESSION['Name_cor']; // Daten aus dem Formular
+	$Genre 			= $_SESSION['Genre_cor'];// Daten aus dem Vormular
+	$Beschreibung 	= $_SESSION['Beschreibung_cor'];// Daten aus dem Formular
+	
+}
+
+?>
 
 <form action="register.php" method="post">
 Filmtitel:
 <br>
-<input type="Text" size="24" maxlength="50" name="Name"></input>
+<input type="Text" size="24" maxlength="50" name="Name" value="<?php echo $Filmtitel; ?>"></input>
 <br>
 Genre:
 <br>
-<input type="Text" size="24" maxlength="50" name="Genre"></input>
+<input type="Text" size="24" maxlength="50" name="Genre" value="<?php echo $Genre; ?>"></input>
 <br>
-Filename:
+Größe des Films:
 <br>
-<input type="Text" size="24" maxlength="50" name="file_name"></input>
+Hight<input type="Text" size="24" maxlength="5" name="Hight" ></input>
+<br>
+Wight<input type="Text" size="24" maxlength="5" name="Wight" ></input>
+<br>
 <br>
 Filmbeschreibung:
 <br>
-<textarea name="Beschreibung" cols="50" rows="10"></textarea>
+<textarea name="Beschreibung" cols="50" rows="10" value="<?php echo $Beschreibung; ?>"></textarea>
 <br>
 <br>
 <br>

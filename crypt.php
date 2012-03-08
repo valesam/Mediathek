@@ -1,4 +1,5 @@
 <?php
-$password = crypt('mypassword','$2a$10$usesomesillystringforsalt$');
-echo $password;
+
+ $text = "Ö Ä Ü ö ä ü";
+  echo htmlentities($text, ENT_QUOTES);
 ?>

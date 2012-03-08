@@ -26,7 +26,41 @@ a:active {
 color:#3d7ca8;
 text-decoration: none
 }
+/*Anordnung der Userfunktionen auf der Homeseite*/
+.home{
+padding-left: 40px; 
+padding-top: 100px;
+}
+.homeApp1.Title{
+width:500px;
+height: 30px;
+background-color:#131713;
+-moz-border-radius:4px;
+-webkit-border-radius:4px;
+-khtml-border-radius:4px;
+behavior:url(style/border-radius.htc);
+position: absolute;
+line-height: 28px;
+}
+.homeApp1.Title lable{
+padding-left: 12px !important;
+color: #FFFFFF;
+}
+.homeApp1.Box{
+position: relative;
+padding-top: 25px;
+border: 1px solid #000000 !important;
+width: 498px
+}
+.homeApp1.Box ul
+{
 
+list-style-type: none;
+line-height: 28px;
+}
+.homeApp1.Box.input{
+padding-left: 20px;
+}
 /*Navigationsleiste oben*/
 #navibar {
 height: 27px;

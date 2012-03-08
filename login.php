@@ -48,7 +48,8 @@ include "error.php"; /* einbinden der Fehlerseite */
  {
 /* wenn beide Passwšrter Ÿbereinstimmen wird eine Session eršffnet(http://de2.php.net/manual/de/intro.session.php) */
 session_start(); /* šffnen der Session */
-$_SESSION["sitepass"]=$UserPasswortHashed; /* Schreiben des Passwortes in die Session */
+$_SESSION["sitepass"]=$UserPasswortHashed; /* Schreiben des Passworteshashs in die Session */
+$_SESSION['user'] = $Username; // Speichern des Usernamens zur Späteren Verwendung
 include "browser_info.php"; /* einbinden der browser_info.php um Informationen ueber den Browser zusammeln */
 $_SESSION['UserOs'] = $osName.$osVersion; /* Speichern des Betriebssystems in der Session um bei spŠteren Aktionen diese Daten zu verwenden */
 $_SESSION['UserBrowser'] = $Browser; /* Speichern des Browsers in der Session um bei spŠteren Aktionen diese Daten zu verwenden */
