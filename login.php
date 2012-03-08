@@ -23,7 +23,7 @@ $resultOfQuery = mysql_query($sql) or die (mysql_error()); /* AusfŸhren der obe
 if(mysql_num_rows($resultOfQuery) == 0) /* †berprŸfung ob die abfrage ein Ergebniss hatte | Die funktion mysql_num_rows ŸberprŸft die Anzahl der Ergebnisse (http://php.net/manual/de/function.mysql-num-rows.php) */
 {
 /* wenn das Ergebnis 0 ist, also der User nicht in der Datenbank ist wird folgender Quellcode ausgefŸhrt: */
-include "main.php";
+include "menu.html";
 $Fehler = "noUser"; /* Variable zu Behandlung der Ausgabe auf der Fehlerseite */
 include "error.php"; /* einbinden der Fehlerseite */
 }
@@ -40,6 +40,7 @@ else /* Wenn der User in der Datenbank ist wird folgender Quellcode ausgefŸhrt 
  if($DatabaseUserPasswort != $UserPasswortHashed) /* PrŸfung ob sich beide Hashes gleichen */
  {
 /* Wenn nein wird der User auf die Fehlerseite umgleitet und aufgefordert sein Passwort neu einzugeben */
+include "menu.html";
 $Fehler = "passwortIncorrect"; /* Variable zu Behandlung der Ausgabe auf der Fehlerseite */
 include "error.php"; /* einbinden der Fehlerseite */
  }
@@ -53,8 +54,7 @@ $_SESSION['user'] = $Username; // Speichern des Usernamens zur Späteren Verwend
 include "browser_info.php"; /* einbinden der browser_info.php um Informationen ueber den Browser zusammeln */
 $_SESSION['UserOs'] = $osName.$osVersion; /* Speichern des Betriebssystems in der Session um bei spŠteren Aktionen diese Daten zu verwenden */
 $_SESSION['UserBrowser'] = $Browser; /* Speichern des Browsers in der Session um bei spŠteren Aktionen diese Daten zu verwenden */
-$_GET['work'] = "filme";
-include "main.php"; /* einbinden der main.php | auf dieser Seite befinden sich alle weiteren Funktionen der Mediathek */
+include "home.php"; /* einbinden der main.php | auf dieser Seite befinden sich alle weiteren Funktionen der Mediathek */
 
  }
 }

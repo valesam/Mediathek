@@ -11,11 +11,15 @@ include "menu.html";
 *  regisliierungs modul geladen, wenn die Variable nicht leer ist werden verschiedene mögliche Aktionen für den 
 *  User eingebledet
 */
-if(!empty($_SESSION['user']) )
+if(!empty($_SESSION['user']))
 {
  echo "<!--User Funktionen wie z.B. Passwort ändern-->"."\n";
- echo "<h1>Home</h1>";
+ $Username = $_SESSION['user'];
+ $json = json_encode($Username);
+ echo "<h1>Willkommen auf der Homeseite $Username</h1>";
+ // Auruf der Formatierung für die HomeApps
  echo "<div class='home'>";
+ // Einbinden der HomeApp Passwort wächseln
  include "PasswortChange.html";
  echo "</div>";
 }

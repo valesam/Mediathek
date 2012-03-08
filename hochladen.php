@@ -17,7 +17,7 @@ if ($_SESSION["fehlerImUpload"] == true)
 
 ?>
 
-<form action="register.php" method="post">
+
 Filmtitel:
 <br>
 <input type="Text" size="24" maxlength="50" name="Name" value="<?php echo $Filmtitel; ?>"></input>
@@ -25,14 +25,17 @@ Filmtitel:
 Genre:
 <br>
 <input type="Text" size="24" maxlength="50" name="Genre" value="<?php echo $Genre; ?>"></input>
-<br>
-Größe des Films:
-<br>
-Hight<input type="Text" size="24" maxlength="5" name="Hight" ></input>
-<br>
-Wight<input type="Text" size="24" maxlength="5" name="Wight" ></input>
+<br><br>
+Gr&ouml;&szlig;e des Films:
 <br>
 <br>
+Width: <input type="Text" size="24" maxlength="5" name="Width" ></input>
+<br>
+<br>
+Hight: <input type="Text" size="24" maxlength="5" name="Hight" ></input>
+<br>
+<br>
+
 Filmbeschreibung:
 <br>
 <textarea name="Beschreibung" cols="50" rows="10" value="<?php echo $Beschreibung; ?>"></textarea>
@@ -43,7 +46,8 @@ Filmbeschreibung:
 W&auml;hlen Sie eine Videodatei (mp4, flv, 3gp usw.) von Ihrem Rechner aus, um sie hochzuladen<br>
 
 <input name="datei" type="file" size="50" maxlength="100000" accept="text/*"><br>
-<br>
+<br><br><br>
+ <input type="checkbox" name="update_box" value="update" />Updaten<br/>
 
 <input type="submit" value="Hochladen">
 

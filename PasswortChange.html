@@ -1,3 +1,40 @@
+<!--
+Autor: Leon Bergmann
+Datum: 8.März 2012
+Zweck: Gibt dem User die Möglichkeit sein Passwort zu wechseln
+-->
+ 			
+ 			<script>
+ 				function change(){
+ 					// Übernimmt die Daten des mit JSON codierten Array aus dem PHP CODE
+					var json = '<?= $json ?>';
+ 					// Brücke zwischen PHP und JavaScript (clientseitig)
+					var Username = eval('(' + json + ')');
+ 					var oldPW      = document.getElementById("oldPW").value;
+ 					var newPW      = document.getElementById("newPW").value;
+ 					var newPWCheck = document.getElementById("newPWCheck").value;
+ 					var params     = "oldPW=" + oldPW + "&newPW=" + newPW + "&newPWCheck=" + newPWCheck + "&Username=" + Username;
+ 					var url = "funktionen/passwortChange.php";
+ 					var http = new XMLHttpRequest();
+					// Verbindung definieren
+					http.open("POST", url, true);
+
+					// Header Informationen setzen
+					http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+					http.setRequestHeader("Content-length", params.length);
+					http.setRequestHeader("Connection", "close");
+					http.onreadystatechange = function() {// Funktions Aufruf bei statusänderung
+					// Wenn die Rückgabe der Date dem readyState 4 und dem https status 200 entspricht wird 
+					// die Rückgabe in die <div> Ausgabe geschrieben
+					if(http.readyState == 4 && http.status == 200) {
+							document.getElementById("AusgabePasswort").innerHTML = http.responseText;
+						}
+					}
+					// Abschicken der des Requesrts
+					http.send(params);
+ 				}; 
+ 			</script>
+
  			<div class='homeApp1'>
  				<div class='homeApp1 Title'>
  					<lable>Passwort ändern</lable>
@@ -5,17 +42,18 @@
  				<div class='homeApp1 Box'>
  					<ul>
  						<li>
-							<lable>Altes Passwort:</lable><span style='padding-left: 118px;'><input maxlength='50' name='oldPw' size='24' type='password' /></span>
+							<lable>Altes Passwort:</lable><span style='padding-left: 118px;'><input maxlength='50' id='oldPW' size='24' type='password' /></span>
 					    </li>
 					    <li>
-							<lable>Neues Passwort:</lable><span style='padding-left: 108px;'><input maxlength='50' name='newPw' size='24' type='password' /></span>
+							<lable>Neues Passwort:</lable><span style='padding-left: 108px;'><input maxlength='50' id='newPW' size='24' type='password' /></span>
 						</li>
 						<li>
-							<lable>Neues Passwort wiederholen: </lable><input maxlength='50' name='newPwCheck' size='24' type='password' />
+							<lable>Neues Passwort wiederholen: </lable><input maxlength='50' id='newPWCheck' size='24' type='password' />
 						</li>
 						<li>	
 							<input type='Button' value='Passwort ändern' onclick='change()'>
 						</li>
 					</ul>
+					<div id="AusgabePasswort"></div>
 				</div>
 			</div>
