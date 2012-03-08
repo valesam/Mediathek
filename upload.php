@@ -9,7 +9,7 @@ if($dateityp[1] == "mp4" OR $dateityp[1] == "flv" OR $dateityp[1] == "3gp")
 	
 
 	//Serverconnection Daten
-	include("connect.php");
+	include("Funktionen/connect.php");
 
 	// Abfrage der Daten aus dem Vorherigen Formular
 	$Filmtitel = $_POST['Name']; // Daten aus dem Vormular
