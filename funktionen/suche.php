@@ -22,6 +22,10 @@ $film_beschreibung = $resultAsAObject->Beschreibung;
 $film_player_size = "width='$resultAsAObject->width' height='$resultAsAObject->height'";
 #########################################################################
 // Ausgabe des Player 
+if($film_player_size == "width='' height=''")
+{
+	$film_player_size = "width='640' height='480'";
+}
 echo "<h2>$Film_Titel</h2>";
 echo "<div class='Beschreibung'>$film_beschreibung</div>";
 echo "<object ".$film_player_size."> <param name='movie' value='../Mediathek/player/StrobeMediaPlayback.swf'></param>
