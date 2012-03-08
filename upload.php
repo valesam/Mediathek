@@ -1,16 +1,15 @@
 <?php
-$dateityp = $_FILES['datei']['tmp_name'];
+$dateiname = $_FILES['datei']['name'];
+$dateityp  = explode(".",$dateiname);
+if($dateityp[1] == "mp4" OR $dateityp[1] == "flv" OR $dateityp[1] == "3gp")
+{
+	move_uploaded_file($_FILES['datei']['tmp_name'], "uploads/".$dateiname);
+	echo $dateiname." hochgeladen!";
 
- 
+}
+else
+{
+	echo "Der Film den Sie hochladen m&ouml;chten ist in einem nicht zul&auml;ssigen Format. Bitte konvertieren Sie ihn in ein geiegnetes Format";
+}
 
-   if($_FILES['datei']['size'] <  102400)
-      {
-      move_uploaded_file($_FILES['datei']['tmp_name'], "upload/".$_FILES['datei']['name']);
-      echo "Das Bild wurde Erfolgreich nach upload/".$_FILES['datei']['name']." hochgeladen";
-      }
-
-   else
-      {
-         echo "Die Datei darf nicht größer als 100 kb sein ";
-      }
 ?>

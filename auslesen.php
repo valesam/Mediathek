@@ -1,6 +1,3 @@
-<?php
-include("secoured.php");
-?>
 Arbeitsverzeichnis
 <ul>
 <?php
