@@ -72,8 +72,9 @@ $json = json_encode($filmData);
 			// die Rückgabe in die <div> Ausgabe geschrieben
 			if(http.readyState == 4 && http.status == 200) 
 			{
-				
-				document.getElementById("mediaplayer").innerHTML = http.responseText;
+				var Data = http.responseText.split("#");
+				document.getElementById("beschreibung").innerHTML = Data[0];
+				document.getElementById("mediaplayer").innerHTML = Data[1];
 	
 			}
 		}
@@ -85,11 +86,13 @@ $json = json_encode($filmData);
 	
 	<!-- Scuhfeld Definition -->
 	<div style="margin-top:120px;padding-left:20px;">
-		<label for="tags">Tags: </label>
+		<label for="tags">Suche: </label>
 		<input id="tags" name="film"/>
 		<input type="submit" value="Absenden" onclick="mi()">
 	</div>
 	<div style="padding-top:60px;">
+		<div id="beschreibung"></div>
+		<div style="padding-top: 100px;"></div>
 		<div id="mediaplayer"></div>
 	</div>
 

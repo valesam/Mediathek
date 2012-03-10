@@ -87,6 +87,39 @@ width: 98px
 .homeApp2.Box img{
 padding-left:15px;
 }
+
+/** Filmbeschreibung */
+.Beschreibung.Title{
+margin-left: 40px;
+width:600px;
+height: 30px;
+background-color:#131713;
+-moz-border-radius:4px;
+-webkit-border-radius:4px;
+-khtml-border-radius:4px;
+behavior:url(style/border-radius.htc);
+position: absolute;
+line-height: 28px;
+}
+.Beschreibung.Title lable{
+padding-left: 12px !important;
+color: #FFFFFF;
+}
+.Beschreibung.Box{
+margin-left: 40px;
+padding-top: 25px;
+width:598px;
+position: absolute;
+border: 1px solid #000000 !important;
+}
+.Beschreibung.Box p{
+padding-left: 12px;
+}
+
+
+
+
+
 /*Navigationsleiste oben*/
 #navibar {
 height: 27px;
@@ -299,6 +332,7 @@ font-size: 24px;
 font-weight: bold;
 text-align: center;
 }
+/** Definition der Passwort ändern Funktion Fehlermeldung */
 #warningsPW{
 color: #FF0000;
 font-size: 24px;

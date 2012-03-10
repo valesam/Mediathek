@@ -17,7 +17,7 @@ if ($_SESSION["fehlerImUpload"] == true)
 
 ?>
 
-
+<div style="padding-left:20px">
 Filmtitel:
 <br>
 <input type="Text" size="24" maxlength="50" name="Name" value="<?php echo $Filmtitel; ?>"></input>
@@ -29,10 +29,10 @@ Genre:
 Gr&ouml;&szlig;e des Films:
 <br>
 <br>
-Width: <input type="Text" size="24" maxlength="5" name="Width" ></input>
+Width: <input type="Text" size="5" maxlength="5" name="Width" ></input>
 <br>
 <br>
-Hight: <input type="Text" size="24" maxlength="5" name="Hight" ></input>
+Hight: <input type="Text" size="5" maxlength="5" name="Hight" ></input>
 <br>
 <br>
 
@@ -53,7 +53,6 @@ W&auml;hlen Sie eine Videodatei (mp4, flv, 3gp usw.) von Ihrem Rechner aus, um s
 
 </form>
 </table>
-
-
 </p>
 </form>
+</div>
