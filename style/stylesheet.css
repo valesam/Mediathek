@@ -89,8 +89,45 @@ padding-left:15px;
 }
 
 /** Filmbeschreibung */
+.Beschreibung{
+margin-top: 400px;
+}
 .Beschreibung.Title{
 margin-left: 40px;
+margin-top: -180px !important;
+width:600px;
+height: 20px;
+background-color:#131713;
+-moz-border-radius:4px;
+-webkit-border-radius:4px;
+-khtml-border-radius:4px;
+behavior:url(style/border-radius.htc);
+position: absolute;
+line-height: 18px;
+}
+.Beschreibung.Title lable{
+padding-left: 12px !important;
+color: #FFFFFF;
+}
+.Beschreibung.Box{
+margin-top: -180px !important;
+margin-left: 40px;
+padding-top: 25px;
+width:598px;
+position: absolute;
+border: 1px solid #000000 !important;
+}
+.Beschreibung.Box p{
+padding-left: 12px;
+font-size: 12px;
+}
+
+/** Upload Formular*/
+.upload{
+margin-top: 100px;
+margin-left: 20px;
+}
+.upload.Title{
 width:600px;
 height: 30px;
 background-color:#131713;
@@ -101,20 +138,60 @@ behavior:url(style/border-radius.htc);
 position: absolute;
 line-height: 28px;
 }
-.Beschreibung.Title lable{
+.upload.Title lable{
 padding-left: 12px !important;
 color: #FFFFFF;
 }
-.Beschreibung.Box{
-margin-left: 40px;
+.upload.Box{
 padding-top: 25px;
 width:598px;
 position: absolute;
 border: 1px solid #000000 !important;
 }
-.Beschreibung.Box p{
-padding-left: 12px;
+.upload.Box ul{
+list-style-type: none;
+padding-left: 20px;
+line-height: 28px;
 }
+
+
+/*Definition der Suche*/
+.Suche{
+margin-top: 40px;
+margin-left: 20px;
+}
+.Suche.Title{
+width:400px;
+height: 30px;
+background-color:#131713;
+-moz-border-radius:4px;
+-webkit-border-radius:4px;
+-khtml-border-radius:4px;
+behavior:url(style/border-radius.htc);
+position: absolute;
+line-height: 28px;
+}
+.Suche.Title lable{
+padding-left: 12px !important;
+color: #FFFFFF;
+}
+.Suche.Box{
+padding-top: 40px;
+width:398px;
+position: absolute;
+border: 1px solid #000000 !important;
+}
+.Suche.Box input{
+margin-left:10px;
+margin-bottom: 10px;
+}
+
+
+
+
+
+
+
 
 
 

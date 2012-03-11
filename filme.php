@@ -5,17 +5,21 @@
 *Datum: unbekannt 	
 *Zweck: Such Menü für Filme
 */
-/**
-	include "connect";
-	$sql = "Select Titel from Filme";
-	$res = mysql_query($sql) or die ("<p id='warnings'>Keine Verbindung zur Mediathek</p>");
-	$filmData = mysql_fetch_array($res);
-* Aus Testgründen wird hier ein vordefiniertes  Array verwendet später werden die Daten aus der DB geladen 
-*/
-
-
-$filmData = array("The Big Buck Bunny","James Bond - Goldfinger","Resident Evil","Underworld","Balde","Lion","Back to the Future","Hot Fuzz", "Back to Karkand", "BF3", "I am Legend", "Terminator",
-"WALL•E – Der Letzte räumt die Erde auf", "Vergessene Welt: Jurassic Park", "Twister", "Troja", "Transormers – Die Rache", "Transformers 3", "Transformers", "Toy Story 3", "Toy Story 2", "Titanic", "The Sixth Sense", "The Day After Tomorrow", "The Dark Knight", "The Da Vinci Code – Sakrileg", "Terminator 2 – Tag der Abrechnung", "Star Wars: Episode III – Die Rache der Sith", "Star Wars: Episode II – Angriff der Klonkrieger", "Star Wars: Episode I – Die dunkle Bedrohung", "Spider-Man 3", "Spider-Man 2", "Spider-Man", "Shrek der Dritte", "Shrek 2 – Der tollkühne Held kehrt zurück", "Sherlock Holmes: Spiel im Schatten", "Sherlock Holmes", "Rio", "Ratatouille", "Rapunzel – Neu verföhnt", "Pirates of the Caribbean – Fremde Gezeiten", "Pirates of the Caribbean – Fluch der Karibik 2", "Pirates of the Caribbean – Am Ende der Welt", "Oben", "New Moon – Bis(s) zur Mittagsstunde", "Nachts im Museum", "Mission: Impossible – Phantom Protokoll", "Mission: Impossible II", "Men in Black", "Meine Frau, ihre Schwiegereltern und ich", "Matrix Reloaded", "Mamma Mia!", "Madagascar 2", "Madagascar", "Kung Fu Panda 2", "Kung Fu Panda", "Krieg der Welten", "Krieg der Sterne/Star Wars: Episode IV – Eine neue Hoffnung", "ing Kong", "Kampf der Titanen", "Jurassic Park", "James Bond 007: Ein Quantum Trost", "James Bond 007: Casino Royale", "Iron Man 2", "Iron Man", "Indiana Jones und das Königreich des Kristallschädels", "Independence Day", "Inception", "Illuminati", "Ich – Einfach Unverbesserlich", "Ice Age 3: Die Dinosaurier sind los", "Ice Age 2: Jetzt taut’s", "I Am Legend", "Harry Potter und die Kammer des Schreckens", "Harry Potter und die Heiligtümer des Todes: Teil 2", "Harry Potter und die Heiligtümer des Todes: Teil 1", "Harry Potter und der Stein der Weisen", "Harry Potter und der Orden des Phönix", "Harry Potter und der Halbblutprinz", "Harry Potter und der Gefangene von Askaban", "Harry Potter und der Feuerkelch", "Hangover 2", "Hancock", "Ghost – Nachricht von Sam", "Für immer Shrek", "Forrest Gump", "Fluch der Karibik", "Findet Nemo", "Fast & Furious Five", "Eclipse – Bis(s) zum Abendrot", "E. T. – Der Außerirdische", "Drachenzähmen leicht gemacht", "Die Unglaublichen – The Incredibles", "Die Simpsons – Der Film", "Die Schlümpfe", "Die Passion Christi", "Die Monster AG", "Die Chroniken von Narnia: Der König von Narnia", "Der König der Löwen", "Der Herr der Ringe: Die zwei Türme", "Der Herr der Ringe: Die Rückkehr des Königs", "Der Herr der Ringe: Die Gefährten", "Der gestiefelte Kater", "Das Imperium schlägt zurück", "Cars 2", "Bruce Allmächtig", "Breaking Dawn – Bis(s) zum Ende der Nacht – Teil 1", "Avatar – Aufbruch nach Pandora", "Armageddon – Das jüngste Gericht", "Alice im Wunderland", "Aladdin", "2012");
+// Einbinden der Verbindung zur Datenbank
+include "funktionen/connect.php";
+// Definition der SQl Statements
+$sql = "Select Name from med_filme";
+// Absenden des Statements | wenn das Statement fehl schlägt bekommt der User die Meldung
+// Das keine Verbindung zur Mediathek besteht
+$res = mysql_query($sql) or die ("<p id='warnings'>Keine Verbindung zur Mediathek</p>");
+// Solange die funktion mysql_fetch_assoc() werte in $filmData_Row schreibt wird folgender 
+// Quellcode ausgeführt
+while( $filmData_Row = mysql_fetch_assoc($res))
+{
+	// Schreibe aus dem Array $filmData_Row die Zeile Name in das Array FilmData
+	$filmData[] = $filmData_Row['Name'];
+}
+// Achreibt das Array in ein JSON Object um 
 $json = json_encode($filmData);
 
 /* Damit nicht bei jedem Request das Suchfenster eingeblendet wird prüfen wir ob
@@ -50,7 +54,7 @@ $json = json_encode($filmData);
 	
 	<script>
 	// Neue Javascript Funktion mit AJAX [http://de.wikipedia.org/wiki/Ajax_%28Programmierung%29]
-	function mi(){
+	function Suche(){
 		// Name des Films aus der Autovervollständigung
 		var film = document.getElementById("tags").value; 
 	    // Neue Variable
@@ -72,6 +76,7 @@ $json = json_encode($filmData);
 			// die Rückgabe in die <div> Ausgabe geschrieben
 			if(http.readyState == 4 && http.status == 200) 
 			{
+				document.getElementById("hochladen").innerHTML = "";
 				var Data = http.responseText.split("#");
 				document.getElementById("beschreibung").innerHTML = Data[0];
 				document.getElementById("mediaplayer").innerHTML = Data[1];
@@ -83,16 +88,53 @@ $json = json_encode($filmData);
 		
 	};
 	</script>
-	
+	<script>
+		// Neue Javascript Funktion mit AJAX [http://de.wikipedia.org/wiki/Ajax_%28Programmierung%29]
+	function upload(){
+		// Name des Films aus der Autovervollständigung
+		var url = "hochladen.php";
+		var params  = "ajax=1";
+		// Erstellen des Requests
+		var http = new XMLHttpRequest();
+		// Verbindung definieren
+		http.open("POST", url, true);
+
+		// Header Informationen setzen
+		http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		http.setRequestHeader("Content-length", params.length);
+		http.setRequestHeader("Connection", "close");
+		http.onreadystatechange = function() 
+		{	//Call a function when the state changes.
+			// Wenn die Rückgabe der Date dem readyState 4 und dem https status 200 entspricht wird 
+			// die Rückgabe in die <div> Ausgabe geschrieben
+			if(http.readyState == 4 && http.status == 200) 
+			{
+				document.getElementById("beschreibung").innerHTML = "";
+				document.getElementById("mediaplayer").innerHTML = "";
+				document.getElementById("hochladen").innerHTML = http.responseText;
+				
+			}
+		}
+		// Abschicken der des Requesrts
+		http.send(params);
+		
+	};
+	</script>
 	<!-- Scuhfeld Definition -->
-	<div style="margin-top:120px;padding-left:20px;">
-		<label for="tags">Suche: </label>
-		<input id="tags" name="film"/>
-		<input type="submit" value="Absenden" onclick="mi()">
+	<div class='Suche'>
+ 		<div class='Suche Title'>
+ 			<lable>Suche / Upload</lable>
+ 		</div>
+		<div class="Suche Box">
+			<input id="tags" name="film"/>
+			<input type="submit" value="Absenden" onclick="Suche()">
+			<input type="button" value="Hochladen?" onclick="upload()">
+		</div>
 	</div>
-	<div style="padding-top:60px;">
+	<div id="hochladen"></div>
+	<div class="Beschreibung">
 		<div id="beschreibung"></div>
-		<div style="padding-top: 100px;"></div>
 		<div id="mediaplayer"></div>
 	</div>
+	
 
