@@ -6,22 +6,22 @@
 *Zweck: Such Menü für Filme
 */
 // Einbinden der Verbindung zur Datenbank
-include "funktionen/connect.php";
+/*include "funktionen/connect.php";
 // Definition der SQl Statements
 $sql = "Select Name from med_filme";
 // Absenden des Statements | wenn das Statement fehl schlägt bekommt der User die Meldung
 // Das keine Verbindung zur Mediathek besteht
-$res = mysql_query($sql) or die ("<p id='warnings'>Keine Verbindung zur Mediathek</p>");
+$res = mysql_query($sql) /*or die ("<p id='warnings'>Keine Verbindung zur Mediathek</p>")*/;
 // Solange die funktion mysql_fetch_assoc() werte in $filmData_Row schreibt wird folgender 
 // Quellcode ausgeführt
-while( $filmData_Row = mysql_fetch_assoc($res))
+/*while( $filmData_Row = mysql_fetch_assoc($res))
 {
 	// Schreibe aus dem Array $filmData_Row die Zeile Name in das Array FilmData
 	$filmData[] = $filmData_Row['Name'];
 }
 // Achreibt das Array in ein JSON Object um 
 $json = json_encode($filmData);
-
+*/
 /* Damit nicht bei jedem Request das Suchfenster eingeblendet wird prüfen wir ob
 * die Variable AJAX null ist, wenn dies so ist wird das Suchfeld eingeblendet,weil
 * der Request für diese Datei nicht von der Suche ausgelöst wurde, diese übermittel nähmlich

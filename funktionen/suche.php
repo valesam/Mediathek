@@ -16,7 +16,7 @@ $sql = "Select * From med_filme Where Name LIKE '$Film_Titel'";
 $result = mysql_query($sql);
 if(mysql_num_rows($result) == 0)
 {
-Echo "<p id='warnings'>Es gibt keinen solchen Film in unserer Datenbank</p>";
+Echo "<p id='warnings'>Es gibt keinen solchen Film in unserer Datenbank</p># ";
 exit;
 }
 // Verarbeiten der Rückgabe

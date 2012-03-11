@@ -9,6 +9,7 @@ if ($_SESSION["fehlerImUpload"] == true)
 	$Beschreibung 	= $_SESSION['Beschreibung_cor'];// Daten aus dem Formular
 }
 ?>
+
 <div class="upload">
 	<div class="upload Title">
 		<lable>Neuen Film hochladen</lable>
@@ -16,7 +17,7 @@ if ($_SESSION["fehlerImUpload"] == true)
 	<div class="upload Box">
 	<ul>
 		<form action="upload.php" method="post" enctype="multipart/form-data">
-		<li><lable>Filmtitel:</lable><span style="padding-left:20px"><input type="Text" size="24" maxlength="50" name="Name" value="<?php echo $Filmtitel; ?>" /></span></li>
+		<li><lable>Filmtitel:</lable><span style="padding-left:20px"><input type="Text" size="24" maxlength="50" name="Name" id="tags" value="<?php echo $Filmtitel; ?>" /></span></li>
 		<li><lable>Genre:</lable><span style="padding-left:36px"><input type="Text" size="24" maxlength="50" name="Genre" value="<?php echo $Genre; ?>" /></span></li>
 		<li><lable>Gr&ouml;&szlig;e des Films:</lable>
 			<ul>
