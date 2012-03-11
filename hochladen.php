@@ -8,6 +8,12 @@ if ($_SESSION["fehlerImUpload"] == true)
 	$Genre 			= $_SESSION['Genre_cor'];// Daten aus dem Vormular
 	$Beschreibung 	= $_SESSION['Beschreibung_cor'];// Daten aus dem Formular
 }
+else
+{
+	$Filmtitel 		= "";
+	$Genre 			= "";
+	$Beschreibung 	= "";
+}
 ?>
 
 <div class="upload">
@@ -29,6 +35,7 @@ if ($_SESSION["fehlerImUpload"] == true)
 		<li><lable>W&auml;hlen Sie eine Videodatei (mp4, flv, 3gp usw.) von Ihrem Rechner aus, um sie hochzuladen</lable><span style="padding-left:93px"><input name="datei" type="file" size="50" maxlength="100000" accept="text/*"></li>
 		<li><input type="checkbox" name="update_box" value="update" /><lable>Updaten</lable></li>
 		<li><input type="submit" value="Hochladen"><li>
+		<li><div id="fehler"></div></li>
 		<li></form></li>
 	</ul>
 </div>

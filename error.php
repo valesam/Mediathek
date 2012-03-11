@@ -71,6 +71,22 @@ elseif($Fehler == "notComplete")
 	*/
 	include "login.html";
 }
+elseif($Fehler == "vorhanden")
+{
+	/* Wenn ein film schon vorhaden ist wird der User zur Filme.php weiter geleitet um die Fehler zu korrigieren*/ 
+	
+	include "menu.html";
+	$hochladen = 1;
+	$FehlerMeldung = "<p id='warningsUpload'>Die Datei ".$dateiname." exestiert bereits <br> Bitte Korrigieren sie Ihren Fehler</p>";
+	include "filme.php";
+}
+elseif($Fehler == "format")
+{
+	include "menu.html";
+	$hochladen = 1;
+	$FehlerMeldung = "<p id='warningsUpload'>Der Film ($dateiname) den Sie hochladen m&ouml;chten ist in einem nicht zul&auml;ssigen Format. Bitte konvertieren Sie ihn in ein geiegnetes Format!</p>";
+	include "filme.php";
+}
 else
 {
 	/* Ausgabe der Fehlermeldung wenn der Fehler nicht bekannt ist */

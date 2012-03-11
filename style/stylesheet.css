@@ -325,7 +325,7 @@ height: 9px;
 font-family: Verdana, Arial, sans-serif;
 
 width: 1000px;
-height: 800px;
+height: 840px;
 
 margin-top: 12px;
 margin-right: auto;
@@ -419,6 +419,13 @@ text-align: center;
 #successPW{
 color: #00FF00;
 font-size: 24px;
+font-weight: bold;
+text-align: center;
+}
+/** Upload Fehlermedlungen*/
+#warningsUpload{
+color: #FF0000;
+font-size: 12px;
 font-weight: bold;
 text-align: center;
 }

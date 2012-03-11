@@ -20,7 +20,7 @@ function datenAnsFormular()
 	$_SESSION['Genre_cor'] 			= $_POST['Genre'];// Daten aus dem Vormular
 	$_SESSION['Beschreibung_cor']	= $_POST['Beschreibung'];// Daten aus dem Formular
 	
-	exit;	//Bricht alles ab
+	//exit;	//Bricht alles ab
 }
 
 
@@ -39,15 +39,15 @@ $dateityp  = explode(".",$dateiname);
 if(in_array($dateiname,scandir("uploads"))) 
 {
 	//Fehlerausgabe wenn Bedingung erfüllt
-	echo "<p id='warnings'>Die Datei ".$dateiname." exestiert bereits <br> <a href='javascript: history.go(-1)'>Bitte Korrigieren sie Ihren Fehler </a></p>";
-	
 	datenAnsFormular();
+	$Fehler = "vorhanden";
+	include "error.php";
 }
 else
 {
 
 // Abfrage von Der Dateityp mp4, flv order 3gp ist
-if($dateityp[1] == "mp4" OR $dateityp[1] == "flv" OR $dateityp[1] == "3gp" OR $dateityp[1] == "wmv" OR $dateityp[1] == "VOB" )
+if($dateityp[1] == "mp4" OR $dateityp[1] == "flv" OR $dateityp[1] == "3gp" OR $dateityp[1] == "wmv")
 {
 	// Verschieb die hochgeladenen Datei in den Ordner uploads
 	move_uploaded_file($_FILES['datei']['tmp_name'], "uploads/".$dateiname);
@@ -107,13 +107,16 @@ if($dateityp[1] == "mp4" OR $dateityp[1] == "flv" OR $dateityp[1] == "3gp" OR $d
 	
 	// In eine Session wird gescheichter das es keinen Fehler im Upload gab
 	$_SESSION["fehlerImUpload"] = false;
+	$_GET['work'] = "filme";
+	include "main.php";
 	
 }
 else
 	{
 	// Ausagbe des Fehlers falls Dateitype nicht den Vorgaben entspricht
-	echo "<p id='warnings'>Der Film ($dateiname) den Sie hochladen m&ouml;chten ist in einem nicht zul&auml;ssigen Format. Bitte konvertieren Sie ihn in ein geiegnetes Format.<br> <a href='javascript: history.go(-1)'>Bitte Korrigieren sie Ihren Fehler </a></p>";
 	datenAnsFormular();
+	$Fehler = "format";
+	include "error.php";
 	}
 }
 ?>

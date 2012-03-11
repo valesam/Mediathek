@@ -6,7 +6,7 @@
 *Zweck: Such Menü für Filme
 */
 // Einbinden der Verbindung zur Datenbank
-/*include "funktionen/connect.php";
+include "funktionen/connect.php";
 // Definition der SQl Statements
 $sql = "Select Name from med_filme";
 // Absenden des Statements | wenn das Statement fehl schlägt bekommt der User die Meldung
@@ -14,19 +14,25 @@ $sql = "Select Name from med_filme";
 $res = mysql_query($sql) /*or die ("<p id='warnings'>Keine Verbindung zur Mediathek</p>")*/;
 // Solange die funktion mysql_fetch_assoc() werte in $filmData_Row schreibt wird folgender 
 // Quellcode ausgeführt
-/*while( $filmData_Row = mysql_fetch_assoc($res))
+while( $filmData_Row = mysql_fetch_assoc($res))
 {
 	// Schreibe aus dem Array $filmData_Row die Zeile Name in das Array FilmData
 	$filmData[] = $filmData_Row['Name'];
 }
 // Achreibt das Array in ein JSON Object um 
+$Hochladen = json_encode($hochladen);
+if($FehlerMeldung != "")
+{
+	$fehlermeldung = json_encode($FehlerMeldung);
+}
 $json = json_encode($filmData);
-*/
+
 /* Damit nicht bei jedem Request das Suchfenster eingeblendet wird prüfen wir ob
 * die Variable AJAX null ist, wenn dies so ist wird das Suchfeld eingeblendet,weil
 * der Request für diese Datei nicht von der Suche ausgelöst wurde, diese übermittel nähmlich
 * den Wert Eins für die Variable $AJAX siehe oben.
 */
+
 ?>
 
 	<script>
@@ -52,8 +58,16 @@ $json = json_encode($filmData);
 	</script>
 	-->
 	
+	<script type="text/javascript">
+			$(function() {
+				// Übernimmt die Daten des mit JSON codierten Array aus dem PHP CODE
+				var json = '<?= $Hochladen  ?>';
+ 				if(json == 1){
+					upload(<?= $fehlermeldung  ?>);
+				}
+			});
+	</script>
 	<script>
-	// Neue Javascript Funktion mit AJAX [http://de.wikipedia.org/wiki/Ajax_%28Programmierung%29]
 	function Suche(){
 		// Name des Films aus der Autovervollständigung
 		var film = document.getElementById("tags").value; 
@@ -90,10 +104,10 @@ $json = json_encode($filmData);
 	</script>
 	<script>
 		// Neue Javascript Funktion mit AJAX [http://de.wikipedia.org/wiki/Ajax_%28Programmierung%29]
-	function upload(){
+	function upload(Fehler){
 		// Name des Films aus der Autovervollständigung
 		var url = "hochladen.php";
-		var params  = "ajax=1";
+		var params  = "";
 		// Erstellen des Requests
 		var http = new XMLHttpRequest();
 		// Verbindung definieren
@@ -112,7 +126,11 @@ $json = json_encode($filmData);
 				document.getElementById("beschreibung").innerHTML = "";
 				document.getElementById("mediaplayer").innerHTML = "";
 				document.getElementById("hochladen").innerHTML = http.responseText;
-				
+				if(typeof Fehler !='undefined')
+				{
+					document.getElementById("fehler").innerHTML = Fehler;
+				}
+
 			}
 		}
 		// Abschicken der des Requesrts
