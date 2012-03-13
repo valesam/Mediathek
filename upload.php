@@ -47,7 +47,8 @@ else
 {
 
 // Abfrage von Der Dateityp mp4, flv order 3gp ist
-if(1=1)
+if($dateityp[1] == "mp4" OR $dateityp[1] == "flv" OR $dateityp[1] == "3gp" OR $dateityp[1] == "wmv")
+
 {
 	// Verschieb die hochgeladenen Datei in den Ordner uploads
 	move_uploaded_file($_FILES['datei']['tmp_name'], "uploads/".$dateiname);
