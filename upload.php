@@ -57,7 +57,7 @@ if($dateityp[1] == "mp4" OR $dateityp[1] == "flv" OR $dateityp[1] == "3gp" OR $d
 	
 
 	//Serverconnection Daten
-	include("Funktionen/connect.php");
+	include("funktionen/connect.php");
 
 	
 	
