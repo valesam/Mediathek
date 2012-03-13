@@ -369,6 +369,12 @@ behavior:url(style/border-radius.htc);
 #login_form li{
 list-style-type: none;
 }
+#login_form a{
+color: #FFFFFF;
+}
+#login_form a:hover{
+color: #FF0000;
+}
 /*Registerformular von Leon Bergmann am 22.2.2012 um 23:28*/
 #register_form {
 
