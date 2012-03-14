@@ -21,8 +21,6 @@ $result		= mysql_query($sql) or DIE (mysql_error().": Ausf&uuml;hrungs error.");
 $count = 0;
 
 $ausgabe="
-
-<html><head>
 <style type='text/css'>
 	*{ 
 	font-weight:normal; margin:0; padding:0;}
@@ -36,7 +34,8 @@ $ausgabe="
 
 #maincontent5 
 	{
-		margin-left:240px;
+		margin-left: 40px;
+		margin-top: -190px;
         width:620px;
 		border-top: 0px dashed #999999;
 		border-right: 0px dashed #999999;
@@ -46,9 +45,6 @@ $ausgabe="
 		padding-left:10px;
     }
     </style>
-    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
-</head>
-<body>
 <div id='maincontent5'>
 ";
 
@@ -57,7 +53,7 @@ while($row = mysql_fetch_array($result) AND $count<= $maxCount)			//Für jedes A
 {
 $count++;
 
-echo $row['Name']." <br> ";
+//echo $row['Name']." <br> ";
 
 
 $ausgabe = $ausgabe."

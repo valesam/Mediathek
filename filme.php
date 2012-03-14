@@ -60,6 +60,7 @@ $json = json_encode($filmData);
 	
 	<script type="text/javascript">
 			$(function() {
+				document.getElementById("content").style.height = document.getElementById("content").style.height + 280;
 				// Übernimmt die Daten des mit JSON codierten Array aus dem PHP CODE
 				var json = '<?= $Hochladen  ?>';
  				if(json == 1){
@@ -91,6 +92,7 @@ $json = json_encode($filmData);
 			if(http.readyState == 4 && http.status == 200) 
 			{
 				document.getElementById("hochladen").innerHTML = "";
+				document.getElementById("main").innerHTML = "";
 				var Data = http.responseText.split("#");
 				document.getElementById("beschreibung").innerHTML = Data[0];
 				document.getElementById("mediaplayer").innerHTML = Data[1];
@@ -125,6 +127,7 @@ $json = json_encode($filmData);
 			{
 				document.getElementById("beschreibung").innerHTML = "";
 				document.getElementById("mediaplayer").innerHTML = "";
+				document.getElementById("main").innerHTML = "";
 				document.getElementById("hochladen").innerHTML = http.responseText;
 				if(typeof Fehler !='undefined')
 				{
@@ -155,8 +158,11 @@ $json = json_encode($filmData);
 		<div id="mediaplayer"></div>
 	</div>
 	
+
+<div id="main">
 <?php
 include "funktionen/film_ausgabe.php";
 ?>
+</div>
 	
 
