@@ -155,4 +155,8 @@ $json = json_encode($filmData);
 		<div id="mediaplayer"></div>
 	</div>
 	
+<?php
+include "funktionen/film_ausgabe.php";
+?>
+	
 

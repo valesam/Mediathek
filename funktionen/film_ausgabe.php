@@ -26,7 +26,7 @@ $ausgabe="
 <style type='text/css'>
 	*{ 
 	font-weight:normal; margin:0; padding:0;}
-	body{ background:#ffffff; color:#1c1b1a; font:12px Arial, Helvetica, sans-serif;}
+	/*body{ background:#ffffff; color:#1c1b1a; font:12px Arial, Helvetica, sans-serif;}*/
 	a{ text-decoration:none; color:#46595D;}
 	a,li,p,span{}
 	strong{ font-weight:bold;}
@@ -58,13 +58,13 @@ while($row = mysql_fetch_array($result) AND $count<= $maxCount)			//Für jedes A
 $count++;
 
 echo $row['Name']." <br> ";
-}
 
-$ausgabe=."
+
+$ausgabe = $ausgabe."
 
 <div style='width:742px'>
 	<div style='float:left'>
-    <img src='".$row['Bild']."' border=0 style='width:105px;max-width:105px;max-height:160px;min-height:140px;' alt='".$row['Name']."' title='".$row['Name']."'>&nbsp;    	<BR>
+    <img src='".$row['Cover']."' border=0 style='width:105px;max-width:105px;max-height:160px;min-height:140px;' alt='".$row['Name']."' title='".$row['Name']."'>&nbsp;    	<BR>
     </div>
 <div style='min-height:170px;'>
 <span style='font-size:18px;'>
@@ -80,7 +80,7 @@ $ausgabe=."
 <br><br>
 ";
 }
-$ausgabe=."</div>";
+$ausgabe = $ausgabe. "</div>";
 echo $ausgabe;
 
 ?>
