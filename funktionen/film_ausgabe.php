@@ -22,8 +22,6 @@ $count = 0;
 while($row = mysql_fetch_array($result) AND $count<= $maxCount)			//Für jedes Array findet ein Durchlauf der Funktion statt
 {
 $count++;
-echo $row['name'].", <br> ";
+echo $row['Name']." <br> ";
 }
-mysql_close($verbindung);				//Datenbankverbindung wird geschlossen
-
 ?>

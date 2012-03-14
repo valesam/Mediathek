@@ -41,8 +41,8 @@ echo "<div class='Beschreibung Title'>
 echo "<div class='Beschreibung Box'><p>$film_beschreibung</p></div>";
 echo "#";
 echo "<object ".$film_player_size."><param name='movie' value='http://webserver/Mediathek/player/StrobeMediaPlayback.swf'></param>
-<param name='flashvars' value='src=".$film_pfad."&post=".$film_preview."'></param>
+<param name='flashvars' value='src=".$film_pfad."&poster=".$film_preview."'></param>
 <param name='allowFullScreen' value='true'></param><param name='allowscriptaccess' value='always'></param>
-<param name='wmode' value='direct'></param><embed src='http://webserver/Mediathek/player/StrobeMediaPlayback.swf' type='application/x-shockwave-flash' allowscriptaccess='always' allowfullscreen='true' wmode='direct' ".$film_player_size." flashvars='src=".$film_pfad."&post=".$film_preview."'></embed></object>";
+<param name='wmode' value='direct'></param><embed src='http://webserver/Mediathek/player/StrobeMediaPlayback.swf' type='application/x-shockwave-flash' allowscriptaccess='always' allowfullscreen='true' wmode='direct' ".$film_player_size." flashvars='src=".$film_pfad."&poster=".$film_preview."'></embed></object>";
 
 ?>
