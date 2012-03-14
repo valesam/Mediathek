@@ -15,7 +15,6 @@ else
 	$Beschreibung 	= "";
 }
 ?>
-
 <div class="upload">
 	<div class="upload Title">
 		<lable>Neuen Film hochladen</lable>
@@ -30,7 +29,7 @@ else
 				<li><label>Width:</lable><span style="padding-left:18px"><input type="Text" size="5" maxlength="5" name="Width" /></span></li>
 				<li><lable>Hight:</label><span style="padding-left:21px"><input type="Text" size="5" maxlength="5" name="Hight" /></span></li>
 			</ul>
-		<li><lable>Filmbeschreibung:</lable></li>
+		<li><lable>Filmbeschreibung:</lable><span style="padding-left:210px;"><lable>max Zeichen: 500</lable></span></li>
 		<li><span style="padding-left:93px"><textarea name="Beschreibung" cols="50" rows="10" value="<?php echo $Beschreibung; ?>"></textarea></span></li>
 		<li><lable>W&auml;hlen Sie eine Videodatei (mp4, flv, 3gp usw.) von Ihrem Rechner aus, um sie hochzuladen</lable><span style="padding-left:93px"><input name="datei" type="file" size="50" maxlength="100000" accept="text/*"></li>
 		<li><input type="checkbox" name="update_box" value="update" /><lable>Updaten</lable></li>
