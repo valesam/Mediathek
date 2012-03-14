@@ -27,9 +27,10 @@ $Film_Titel 		= htmlentities($_POST["film"], ENT_QUOTES);
 $film_pfad         	= $resultAsAObject->SpeicherOrt;
 $film_preview      	= $resultAsAObject->Cover;
 $film_beschreibung 	= htmlentities($resultAsAObject->Beschreibung, ENT_QUOTES);
+$film_beschreibung  = chunk_split($film_beschreibung,80, "<br />");
 $film_player_size 	= "width='$resultAsAObject->width' height='$resultAsAObject->height'";
 
-#########################################################################
+#######################################################################
 // Ausgabe des Player 
 if($film_player_size == "width='' height=''")
 {

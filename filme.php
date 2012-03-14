@@ -144,9 +144,9 @@ $json = json_encode($filmData);
  			<lable>Suche / Upload</lable>
  		</div>
 		<div class="Suche Box">
-			<input id="tags" name="film"/>
+			<input id="tags" name="film" onkeypress="{if (event.keyCode==13)Suche()}"/>
 			<input type="submit" value="Absenden" onclick="Suche()">
-			<input type="button" value="Hochladen?" onclick="upload()">
+			<input type="button" value="Hochladen?" onclick="upload()" onkeypress="{if (event.keyCode==13)upload()}">
 		</div>
 	</div>
 	<div id="hochladen"></div>

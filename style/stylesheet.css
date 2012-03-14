@@ -108,6 +108,7 @@ line-height: 18px;
 .Beschreibung.Title lable{
 padding-left: 12px !important;
 color: #FFFFFF;
+font-size: 14px;
 }
 .Beschreibung.Box{
 margin-top: -180px !important;
@@ -118,8 +119,11 @@ position: absolute;
 border: 1px solid #000000 !important;
 }
 .Beschreibung.Box p{
-padding-left: 12px;
-font-size: 12px;
+padding-left: 12px !important;
+padding-right: 12px !important;
+line-height: 28px;
+font-size: 14px;
+overflow: x;
 }
 
 /** Upload Formular*/
