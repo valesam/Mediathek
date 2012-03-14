@@ -9,7 +9,7 @@ $maxCount = 10;
 }
 else
 {
-$maxCount = 2;
+$maxCount = 5;
 }
 // Abfrage in der Datenbank: Gibt alle Daten zu dem Film mit dem selben Titel wie der vom User eingeben Titel
 $sql = "Select * From med_filme";
@@ -35,7 +35,7 @@ $ausgabe="
 #maincontent5 
 	{
 		margin-left: 40px;
-		margin-top: -200px;
+		margin-top: -190px;
         width:620px;
 		border-top: 0px dashed #999999;
 		border-right: 0px dashed #999999;
@@ -60,12 +60,12 @@ $ausgabe = $ausgabe."
 
 <div style='width:742px'>
 	<div style='float:left'>
-    <img src='".$row['Cover']."' border=0 style='width:105px;max-width:105px;max-height:160px;min-height:140px;' alt='".$row['Name']."' title='".$row['Name']."'>&nbsp;    	<BR>
+    <img src='".$row['Cover']."' border=0 style='width:105px;max-width:105px;' alt='".$row['Name']."' title='".$row['Name']."'>&nbsp;    	<BR>
     </div>
 <div style='min-height:170px;'>
 <span style='font-size:18px;'>
     <H1 style='font-size:18px;display:inline;'>
-        <a href='#' style='color:#000000;'>
+        <a href='http://webserver/mediathek/main.php?work=filme&film_id=".$row['ID']."' style='color:#000000;'>
            ".$row['Name']."       </a>
     </H1>
   
