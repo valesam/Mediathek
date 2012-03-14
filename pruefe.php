@@ -32,5 +32,22 @@ if($resultOfquery['OP'] == 1)
 	$linkHash = CreateHash(40,$Name,$Email);
 	$link = "<a href='http://webserver/Mediathek/veri.php?hash=".$linkHash."'>Passwort ändern</a>";
 	echo $link;
+	$email = "mediathek@sky-lab.de";
+	$an = "leon.bergmann@sky-lab.de";
+	$betreff = "Hallo";
+	$mail_header = 'From: E-Mail Anfrage   <'.$email.">\n";
+	$mail_header .= 'Content-type: text/plain; charset=UTF-8' . "\r\n";
+	$message = "Hallo\n";     
+
+
+$an =  mail($an, $betreff, $message, $mail_header );
+if($an == TRUE)
+	{
+		echo "<br>"."Versand";
+	}
+	else
+	{
+		echo "Nicht versand";
+	}
 }
 ?>
