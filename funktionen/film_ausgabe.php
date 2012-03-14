@@ -9,7 +9,7 @@ $maxCount = 10;
 }
 else
 {
-$maxCount = 5;
+$maxCount = 2;
 }
 // Abfrage in der Datenbank: Gibt alle Daten zu dem Film mit dem selben Titel wie der vom User eingeben Titel
 $sql = "Select * From med_filme";
