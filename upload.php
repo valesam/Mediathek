@@ -73,8 +73,8 @@ if($dateitypFilm[1] == "mp4" OR $dateitypFilm[1] == "flv" OR $dateitypFilm[1] ==
 	$Beschreibung = $_POST['Beschreibung'];// Daten aus dem Formular
 	$Hight = $_POST['Hight'];
 	$Width = $_POST['Width'];
-	$location = "http://webserver/Mediathek/uploads/".$dateiname; // Kompletter Dateipfad wird für die Datenbank geschrieben
-	
+	$location = "http://webserver/Mediathek/uploads/".$dateinameFilm; // Kompletter Dateipfad wird für die Datenbank geschrieben
+	$locationCover = "http://webserver/Mediathek/uploads/".$dateinameCover;
 	// Daten über den Uploader werden gesammelt
 	
 	// Ip des Uplaoders
@@ -106,7 +106,7 @@ if($dateitypFilm[1] == "mp4" OR $dateitypFilm[1] == "flv" OR $dateitypFilm[1] ==
 	/*	Inhalt für die SQL_QUERY wird gesetzt; Informationen die in die Datenbank geschrieben werden sollen
 	*	Informationen für die Datenbank: Name des Films, Genre, Beschreibung, SpeicherOrt des Filmes auf dem Server, IP des Uploader, System des Uploader, Browser des Uploaders, Name des Uploaders, aktuelles Datum
 	*/	
-	$sql = "INSERT INTO med_filme (name,Genre,Beschreibung,SpeicherOrt,UploaderIP,UploaderSystem,UploaderBrowser,Uploader,Datum,height,width) VALUES ('$Filmtitel','$Genre','$Beschreibung','$location','$client_ip','$user_os','$browser','$userName',NOW(),'$Hight','$Width')";
+	$sql = "INSERT INTO med_filme (name,Cover,Genre,Beschreibung,SpeicherOrt,UploaderIP,UploaderSystem,UploaderBrowser,Uploader,Datum,height,width) VALUES ('$Filmtitel','$locationCover','$Genre','$Beschreibung','$location','$client_ip','$user_os','$browser','$userName',NOW(),'$Hight','$Width')";
 
 	
 	//Abschicken des SQL-Statemant an die DB
