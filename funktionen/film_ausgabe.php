@@ -19,9 +19,68 @@ $sql = "Select * From med_filme";
 $result		= mysql_query($sql) or DIE (mysql_error().": Ausf&uuml;hrungs error."); 		//Falls Fehler wird abgebrochen
 					
 $count = 0;
+
+$ausgabe="
+
+<html><head>
+<style type='text/css'>
+	*{ 
+	font-weight:normal; margin:0; padding:0;}
+	body{ background:#ffffff; color:#1c1b1a; font:12px Arial, Helvetica, sans-serif;}
+	a{ text-decoration:none; color:#46595D;}
+	a,li,p,span{}
+	strong{ font-weight:bold;}
+	a:hover {
+	color:#1E2726;
+}
+
+#maincontent5 
+	{
+		margin-left:240px;
+        width:620px;
+		border-top: 0px dashed #999999;
+		border-right: 0px dashed #999999;
+		border-bottom: 0px dashed #999999;
+		border-left: 1px dashed #999999;
+		overflow: visible;
+		padding-left:10px;
+    }
+    </style>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+</head>
+<body>
+<div id='maincontent5'>
+";
+
+
 while($row = mysql_fetch_array($result) AND $count<= $maxCount)			//Für jedes Array findet ein Durchlauf der Funktion statt
 {
 $count++;
+
 echo $row['Name']." <br> ";
 }
+
+$ausgabe=."
+
+<div style='width:742px'>
+	<div style='float:left'>
+    <img src='".$row['Bild']."' border=0 style='width:105px;max-width:105px;max-height:160px;min-height:140px;' alt='".$row['Name']."' title='".$row['Name']."'>&nbsp;    	<BR>
+    </div>
+<div style='min-height:170px;'>
+<span style='font-size:18px;'>
+    <H1 style='font-size:18px;display:inline;'>
+        <a href='#' style='color:#000000;'>
+           ".$row['Name']."       </a>
+    </H1>
+  
+            </span>
+<div class='moviedescription'>
+".$row['Beschreibung']."
+</div>
+<br><br>
+";
+}
+$ausgabe=."</div>";
+echo $ausgabe;
+
 ?>
