@@ -87,6 +87,13 @@ elseif($Fehler == "format")
 	$FehlerMeldung = "<p id='warningsUpload'>Der Film ($dateiname) den Sie hochladen m&ouml;chten ist in einem nicht zul&auml;ssigen Format. Bitte konvertieren Sie ihn in ein geiegnetes Format!</p>";
 	include "filme.php";
 }
+elseif($Fehler == "formatCover")
+{
+	include "menu.html";
+	$hochladen = 1;
+	$FehlerMeldung = "<p id='warningsUpload'>Das Cover ($dateiname) das Sie hochladen m&ouml;chten ist in einem nicht zul&auml;ssigen Format. Bitte konvertieren Sie ihn in ein geiegnetes Format!</p>";
+	include "filme.php";
+}
 else
 {
 	/* Ausgabe der Fehlermeldung wenn der Fehler nicht bekannt ist */

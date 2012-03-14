@@ -27,16 +27,19 @@ function datenAnsFormular()
 
 
 session_start();
-	
-$dateiname = $_FILES['datei']['name'];
-$dateityp  = explode(".",$dateiname);
+// Daten des Film	
+$dateinameFilm = $_FILES['datei']['name'];
+$dateitypFilm  = explode(".",$dateinameFilm);
+// Daten des Covers
+$dateinameCover = $_FILES['cover']['name'];
+$dateitypCover  = explode(".",$dateinameCover);
 
 
 
 /*	Der Inhalt, alle Dateien, des Upload-Ordner werden in ein Array geschrieben "scandir('uploads')" und dannach überprüft "in_array", 
 *	ob der Name der hochzuladenen Datei "$dateiname" schon für eine Datei im Upload-Ordner benutzt wird bzw. im Array steht.
 */
-if(in_array($dateiname,scandir("uploads"))) 
+if(in_array($dateinameFilm,scandir("uploads"))) 
 {
 	//Fehlerausgabe wenn Bedingung erfüllt
 	datenAnsFormular();
@@ -47,11 +50,14 @@ else
 {
 
 // Abfrage von Der Dateityp mp4, flv order 3gp ist
-if($dateityp[1] == "mp4" OR $dateityp[1] == "flv" OR $dateityp[1] == "3gp" OR $dateityp[1] == "wmv")
-
+if($dateitypFilm[1] == "mp4" OR $dateitypFilm[1] == "flv" OR $dateitypFilm[1] == "3gp" OR $dateitypFilm[1] == "wmv")
 {
+	if($dateitypCover[1] == "jpg" OR $dateitypCover[1] == "png")
+	{
+	move_uploaded_file($_FILES['cover']['tmp_name'],"uploads/".$dateinameCover);
+	
 	// Verschieb die hochgeladenen Datei in den Ordner uploads
-	move_uploaded_file($_FILES['datei']['tmp_name'], "uploads/".$dateiname);
+	move_uploaded_file($_FILES['datei']['tmp_name'], "uploads/".$dateinameFilm);
 	
 	echo $dateiname." hochgeladen!";
 	
@@ -110,6 +116,13 @@ if($dateityp[1] == "mp4" OR $dateityp[1] == "flv" OR $dateityp[1] == "3gp" OR $d
 	$_SESSION["fehlerImUpload"] = false;
 	$_GET['work'] = "filme";
 	include "main.php";
+	}
+	else
+	{
+		datenAnsFormular();
+		$Fehler = "formatCover";
+		include "error.php";
+	}
 	
 }
 else

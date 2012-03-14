@@ -32,6 +32,7 @@ else
 		<li><lable>Filmbeschreibung:</lable><span style="padding-left:210px;"><lable>max Zeichen: 500</lable></span></li>
 		<li><span style="padding-left:93px"><textarea name="Beschreibung" cols="50" rows="10" value="<?php echo $Beschreibung; ?>"></textarea></span></li>
 		<li><lable>W&auml;hlen Sie eine Videodatei (mp4, flv, 3gp usw.) von Ihrem Rechner aus, um sie hochzuladen</lable><span style="padding-left:93px"><input name="datei" type="file" size="50" maxlength="100000" accept="text/*"></li>
+		<li><lable>W&auml;hlen Sie ein Cover f&uuml;r den Film aus! Bitte nur hochkant Bilder verwenden!</lable><span style="padding-left:93px"><input name="cover" type="file" size="50" maxlength="100000" accept="text/*"></span></li>
 		<li><input type="checkbox" name="update_box" value="update" /><lable>Updaten</lable></li>
 		<li><input type="submit" value="Hochladen"><li>
 		<li><div id="fehler"></div></li>
