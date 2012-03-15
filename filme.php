@@ -1,4 +1,3 @@
-
 <?php
 /** 
 *Autor: Leon Bergmann & Florian Giller
@@ -69,10 +68,17 @@ $json = json_encode($filmData);
 			});
 	</script>
 	<script>
-	function Suche(){
-		// Name des Films aus der Autovervollständigung
-		var film = document.getElementById("tags").value; 
-	    // Neue Variable
+	function Suche(Film){
+	// Name des Films aus der Autovervollständigung
+
+	if(typeof Film =='undefined')
+			{
+				var film = document.getElementById("tags").value; 
+			}
+			else
+			{
+			var film = Film;
+			}
 		var params  = "ajax=1&film="+film;
 		// Ziel Datei
 		var url = "funktionen/suche.php";
