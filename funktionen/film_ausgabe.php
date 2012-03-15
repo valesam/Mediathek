@@ -21,7 +21,6 @@ $result		= mysql_query($sql) or DIE (mysql_error().": Ausf&uuml;hrungs error.");
 $count = 0;
 
 $ausgabe="
-
 <div id='filmausgabe'>
 ";
 
