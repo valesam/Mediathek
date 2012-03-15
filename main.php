@@ -26,7 +26,12 @@ if ($link == "index")
 elseif($link == "filme")
 {
 	/** Aktion beim Linkparameter in diesem Falle: einbinden der Filmgalerie */
+	$Film_ID = $_GET['film_name'];
 	include "filme.php";
+}
+elseif($link == "filme" AND !empty($_GET['film_name']))
+{
+
 }
 elseif($link == "bilder")
 {

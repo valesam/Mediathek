@@ -60,7 +60,7 @@ $json = json_encode($filmData);
 	
 	<script type="text/javascript">
 			$(function() {
-				document.getElementById("content").style.height = document.getElementById("content").style.height + 280;
+				
 				// Übernimmt die Daten des mit JSON codierten Array aus dem PHP CODE
 				var json = '<?= $Hochladen  ?>';
  				if(json == 1){
@@ -69,11 +69,19 @@ $json = json_encode($filmData);
 			});
 	</script>
 	<script>
-	function Suche(){
+	function Suche(Film){
 		// Name des Films aus der Autovervollständigung
-		var film = document.getElementById("tags").value; 
-	    // Neue Variable
-		var params  = "ajax=1&film="+film;
+
+			if(typeof Film =='undefined')
+			{
+				var film = document.getElementById("tags").value; 
+			}
+			else
+			{
+			var film = Film;
+			}
+	  	// Neue Variable
+		var params  = "ajax=1&film=" + film;
 		// Ziel Datei
 		var url = "funktionen/suche.php";
 		// Erstellen des Requests
