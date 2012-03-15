@@ -32,20 +32,8 @@ $ausgabe="
 	color:#1E2726;
 }
 
-#maincontent5 
-	{
-		margin-left: 40px;
-		margin-top: -190px;
-        width:620px;
-		border-top: 0px dashed #999999;
-		border-right: 0px dashed #999999;
-		border-bottom: 0px dashed #999999;
-		border-left: 1px dashed #999999;
-		overflow: visible;
-		padding-left:10px;
-    }
     </style>
-<div id='maincontent5'>
+<div id='filmausgabe'>
 ";
 
 
