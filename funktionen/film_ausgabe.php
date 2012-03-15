@@ -65,7 +65,7 @@ $ausgabe = $ausgabe."
 <div style='min-height:170px;'>
 <span style='font-size:18px;'>
     <H1 style='font-size:18px;display:inline;'>
-        <a href='http://webserver/mediathek/main.php?work=filme&film_id=".$row['ID']."' style='color:#000000;'>
+        <a href='#'  onclick='Suche(\"".$row['Name']."\")' style='color:#000000;'>
            ".$row['Name']."       </a>
     </H1>
   
