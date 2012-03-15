@@ -142,7 +142,7 @@ text-align: justify;
 
 /** Upload Formular*/
 .upload{
-margin-top: 100px;
+margin-top: 90px;
 margin-left: 20px;
 }
 .upload.Title{
@@ -343,7 +343,7 @@ height: 9px;
 font-family: Verdana, Arial, sans-serif;
 
 width: 1000px;
-height: 840px;
+height: 860px;
 
 margin-top: 12px;
 margin-right: auto;
