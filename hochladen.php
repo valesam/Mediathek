@@ -7,12 +7,16 @@ if ($_SESSION["fehlerImUpload"] == true)
 	$Filmtitel 		= $_SESSION['Name_cor']; // Daten aus dem Formular
 	$Genre 			= $_SESSION['Genre_cor'];// Daten aus dem Vormular
 	$Beschreibung 	= $_SESSION['Beschreibung_cor'];// Daten aus dem Formular
+	$high			= $_SESSION['High'];
+	$width			= $_SESSION['Width'];	
 }
 else
 {
 	$Filmtitel 		= "";
 	$Genre 			= "";
 	$Beschreibung 	= "";
+	$high			= "";
+	$width			= "";
 }
 ?>
 <div class="upload">
@@ -26,8 +30,8 @@ else
 		<li><lable>Genre:</lable><span style="padding-left:36px"><input type="Text" size="24" maxlength="50" name="Genre" value="<?php echo $Genre; ?>" /></span></li>
 		<li><lable>Gr&ouml;&szlig;e des Films:</lable>
 			<ul>
-				<li><label>Width:</lable><span style="padding-left:18px"><input type="Text" size="5" maxlength="5" name="Width" /></span></li>
-				<li><lable>Hight:</label><span style="padding-left:21px"><input type="Text" size="5" maxlength="5" name="Hight" /></span></li>
+				<li><label>Width:</lable><span style="padding-left:18px"><input type="Text" size="5" maxlength="5" name="Width"  value="<?php echo $width; ?>"/></span></li>
+				<li><lable>Hight:</label><span style="padding-left:21px"><input type="Text" size="5" maxlength="5" name="Hight" value="<?php echo $high; ?>" /></span></li>
 			</ul>
 		<li><lable>Filmbeschreibung:</lable><span style="padding-left:210px;"><lable>max Zeichen: 500</lable></span></li>
 		<li><span style="padding-left:93px"><textarea name="Beschreibung" cols="50" rows="10" value="<?php echo $Beschreibung; ?>"></textarea></span></li>

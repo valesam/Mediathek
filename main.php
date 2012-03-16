@@ -7,6 +7,7 @@
 */
 /** NUR ZU TEST ZWECKEN*/
 // Wenn dev = 1 ist wirk keine sicherung vorgenommen
+$menu_punkt="-1";
 if($_GET['dev'] != 1)
 {
 	include "secoured.php"; /* Einbinden der Sicherung der Webseite*/
@@ -20,13 +21,16 @@ $link = $_GET['work'];
 if ($link == "index")
 {
 	/** Aktion beim Linkparameter in diesem Falle: einbinden der Homeseite*/ 
+	$menu_punkt="7";
 	include "home.php";
+	
 }
 
 elseif($link == "filme")
 {
 	/** Aktion beim Linkparameter in diesem Falle: einbinden der Filmgalerie */
 	$Film_ID = $_GET['film_name'];
+	$menu_punkt="151";
 	include "filme.php";
 }
 elseif($link == "filme" AND !empty($_GET['film_name']))
@@ -35,21 +39,25 @@ elseif($link == "filme" AND !empty($_GET['film_name']))
 }
 elseif($link == "bilder")
 {
+	$menu_punkt="320";
 	/** Aktion beim Linkparameter in diesem Falle: einbinden der Bilergalerie */
 	include "bilder.php";
 }
 elseif($link == "dokumente")
 {
+	$menu_punkt="500";
 	/** Aktion beim Linkparameter in diesem Falle: einbinden der Dokumentengalerie */
 	include "dokumente.php";
 }
 elseif ($link == "musik")
 {
+	$menu_punkt="717";
 	/** Aktion beim Linkparameter in diesem Falle: einbinden der Musikgalerie */
 	include "musik.php";
 }
 elseif($link == "landkarten")
 {
+	$menu_punkt="891";
 	/** Aktion beim Linkparameter in diesem Falle: einbinden  des Lankartenmoduks*/
 	include "landkarten.php";
 }
@@ -59,6 +67,21 @@ else
 	$Fehler = "noLink";
 	include "error.php";
 }
+
+echo "</div>
+<style type='text/css'>
+#pfeil{
+background-image: url('style/arrow.png');
+background-repeat: no-repeat;
+background-position: center top;
+margin-top: 25px;
+z-index: 10;
+width: 19px;
+height: 9px;
+margin-left: ".$menu_punkt."px;
+}
+</style>
+";
 ?>
 	</body>
 </html>

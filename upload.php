@@ -19,6 +19,8 @@ function datenAnsFormular()
 	$_SESSION['Name_cor'] 			= $_POST['Name']; // Daten aus dem Formular - Name des Films 
 	$_SESSION['Genre_cor'] 			= $_POST['Genre'];// Daten aus dem Vormular
 	$_SESSION['Beschreibung_cor']	= $_POST['Beschreibung'];// Daten aus dem Formular
+	$_SESSION['High']				= $_POST['Hight'];
+	$_SESSION['Width']				= $_POST['Width'];
 	
 	//exit;	//Bricht alles ab
 }
