@@ -30,7 +30,7 @@ elseif($link == "filme")
 {
 	/** Aktion beim Linkparameter in diesem Falle: einbinden der Filmgalerie */
 	$Film_ID = $_GET['film_name'];
-	$menu_punkt="151";
+	$menu_punkt="164";
 	include "filme.php";
 }
 elseif($link == "filme" AND !empty($_GET['film_name']))
@@ -39,27 +39,31 @@ elseif($link == "filme" AND !empty($_GET['film_name']))
 }
 elseif($link == "bilder")
 {
-	$menu_punkt="320";
+	$menu_punkt="336";
 	/** Aktion beim Linkparameter in diesem Falle: einbinden der Bilergalerie */
 	include "bilder.php";
 }
 elseif($link == "dokumente")
 {
-	$menu_punkt="500";
+	$menu_punkt="535";
 	/** Aktion beim Linkparameter in diesem Falle: einbinden der Dokumentengalerie */
 	include "dokumente.php";
 }
 elseif ($link == "musik")
 {
-	$menu_punkt="717";
+	$menu_punkt="732";
 	/** Aktion beim Linkparameter in diesem Falle: einbinden der Musikgalerie */
 	include "musik.php";
 }
 elseif($link == "landkarten")
 {
-	$menu_punkt="891";
+	$menu_punkt="931";
 	/** Aktion beim Linkparameter in diesem Falle: einbinden  des Lankartenmoduks*/
 	include "landkarten.php";
+}
+elseif($link == "" OR empty($link))
+{
+	$menu_punkt="200";
 }
 else
 {

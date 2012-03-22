@@ -11,6 +11,7 @@ include "menu.html";
 *  regisliierungs modul geladen, wenn die Variable nicht leer ist werden verschiedene mögliche Aktionen für den 
 *  User eingebledet
 */
+
 if(!empty($_SESSION['user']))
 {
  echo "<!--User Funktionen wie z.B. Passwort ändern-->"."\n";
@@ -30,4 +31,19 @@ else
 include "login.html";
 // Einbinden des Register Moduls
 include "register.html";
-}?> 
+}
+echo "</div>
+<style type='text/css'>
+#pfeil{
+background-image: url('style/arrow.png');
+background-repeat: no-repeat;
+background-position: center top;
+margin-top: 25px;
+z-index: 10;
+width: 19px;
+height: 9px;
+margin-left: 7px;
+}
+</style>
+";
+?> 
