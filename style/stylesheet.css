@@ -466,6 +466,19 @@ text-align: center;
 margin-left: 40px;
 }
 
+#filmausgabe
+{
+margin-left: 40px;
+margin-top: -190px;
+width:620px;
+border-top: 0px dashed #999999;
+border-right: 0px dashed #999999;
+border-bottom: 0px dashed #999999;
+border-left: 1px dashed #999999;
+overflow: visible;
+padding-left:10px;
+}
+
 /* blabla */
 
 .grpelem {

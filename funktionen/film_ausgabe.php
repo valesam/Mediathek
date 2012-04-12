@@ -21,6 +21,7 @@ $result		= mysql_query($sql) or DIE (mysql_error().": Ausf&uuml;hrungs error.");
 $count = 0;
 
 $ausgabe="
+<<<<<<< HEAD
 <style type='text/css'>
 	*{ 
 	font-weight:normal; margin:0; padding:0;}
@@ -46,6 +47,9 @@ $ausgabe="
     }
     </style>
 <div id='maincontent5'>
+=======
+<div id='filmausgabe'>
+>>>>>>> master
 ";
 
 

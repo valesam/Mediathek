@@ -1,4 +1,3 @@
-
 <?php
 /** 
 *Autor: Leon Bergmann & Florian Giller
@@ -70,9 +69,15 @@ $json = json_encode($filmData);
 	</script>
 	<script>
 	function Suche(Film){
+<<<<<<< HEAD
 		// Name des Films aus der Autovervollständigung
 
 			if(typeof Film =='undefined')
+=======
+	// Name des Films aus der Autovervollständigung
+
+	if(typeof Film =='undefined')
+>>>>>>> master
 			{
 				var film = document.getElementById("tags").value; 
 			}
@@ -80,8 +85,12 @@ $json = json_encode($filmData);
 			{
 			var film = Film;
 			}
+<<<<<<< HEAD
 	  	// Neue Variable
 		var params  = "ajax=1&film=" + film;
+=======
+		var params  = "ajax=1&film="+film;
+>>>>>>> master
 		// Ziel Datei
 		var url = "funktionen/suche.php";
 		// Erstellen des Requests
