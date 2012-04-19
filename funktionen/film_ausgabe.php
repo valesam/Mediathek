@@ -23,7 +23,7 @@ $count = 0;
 $ausgabe="
 <style type='text/css'>
 	*{ 
-	font-weight:normal; margin:0; padding:0;}
+	font-weight:normal;}
 	/*body{ background:#ffffff; color:#1c1b1a; font:12px Arial, Helvetica, sans-serif;}*/
 	a{ text-decoration:none; color:#46595D;}
 	a,li,p,span{}
