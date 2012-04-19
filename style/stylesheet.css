@@ -328,6 +328,7 @@ color: #d1d1d1;
 }
 
 /*Pfeil, der den jeweils aktiven Button markiert*/
+/*
 #pfeil {
 background-image: url("style/arrow.png");
 background-repeat: no-repeat;
@@ -337,7 +338,7 @@ z-index: 10;
 width: 19px;
 height: 9px;
 }
-
+*/
 /*Gesamter Inhalt*/
 #content {
 font-family: Verdana, Arial, sans-serif;
