@@ -71,7 +71,10 @@ else
 	$Fehler = "noLink";
 	include "error.php";
 }
-
+if($link == "filme")
+{
+	goto a:
+}
 echo "</div>
 <style type='text/css'>
 #pfeil{
@@ -86,6 +89,7 @@ margin-left: ".$menu_punkt."px;
 }
 </style>
 ";
+a:
 ?>
 	</body>
 </html>
