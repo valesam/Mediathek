@@ -73,7 +73,7 @@ else
 }
 if($link == "filme")
 {
-	goto a:
+	goto a;
 }
 echo "</div>
 <style type='text/css'>
