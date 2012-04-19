@@ -17,7 +17,7 @@ if(!empty($_SESSION['user']))
  echo "<!--User Funktionen wie z.B. Passwort ändern-->"."\n";
  $Username = $_SESSION['user'];
  $json = json_encode($Username);
- echo "<h1>Willkommen auf der Homeseite $Username</h1>";
+ echo "<h1>Willkommen auf der Homeseite, $Username</h1>";
  // Auruf der Formatierung für die HomeApps
  echo "<div class='home'>";
  // Einbinden der HomeApp Passwort wächseln
