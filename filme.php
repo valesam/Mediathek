@@ -164,7 +164,18 @@ $json = json_encode($filmData);
 		<div id="beschreibung"></div>
 		<div id="mediaplayer"></div>
 	</div>
-	
+<style type='text/css'>
+#pfeil{
+background-image: url('style/arrow.png');
+background-repeat: no-repeat;
+background-position: center top;
+margin-top: 25px;
+z-index: 10;
+width: 19px;
+height: 9px;
+margin-left: 164px;
+}
+</style>	
 
 <div id="main">
 <?php
