@@ -8,10 +8,10 @@
 /** NUR ZU TEST ZWECKEN*/
 // Wenn dev = 1 ist wirk keine sicherung vorgenommen
 $menu_punkt="-1";
-if($_GET['dev'] != 1)
-{
+//if($_GET['dev'] != 1)
+//{
 	include "secoured.php"; /* Einbinden der Sicherung der Webseite*/
-}
+//}
 include "menu.html"; /* Einbinden des Menüs*/
  
 /** Abfrage des übergebenen Parameters aus der menu.html*/
